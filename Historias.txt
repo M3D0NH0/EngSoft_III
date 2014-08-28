@@ -1,0 +1,15 @@
+
+Como secretaria eu gostaria de cadastrar pacientes apartir de Nome, CPF, Endereço, Telefone.
+Como secretaria eu gostaria de Agendar consultas mediante a solicitação do Paciente.
+Como secretaria eu gostaria de Agendar consultas de acordo com particular ou convenio.
+Sendo que o Sistema deverá armazenar registros de consultas e historicos de Pacientes.
+Sendo que o Sistema deverá organizar os registros de Agendas por Data e de Pacientes por Nome.
+Sou o Medico e a secretaria poderão pesquisar as consultas e os pacientes.
+
+
+Cadastro de pacientes.
+Agendamento de Consultas.
+Registro de consultas antigas.
+Ordenação de consultas por data.
+Pesquisa de pacientes e consultas.
+
