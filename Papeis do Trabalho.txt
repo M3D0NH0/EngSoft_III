@@ -1,0 +1,13 @@
+XP
+
+
+Henrique Schwab
+Coach - é o que sabe sobre o XP vai procurar saber se estão fazendo XP.
+Customer - Responsavel pela definição de tarefas.
+Programmer - Cria as classes e projeta os testes Unitarios.
+Tester - Faz teste de sistema, de carga e etc.
+
+
+Guilherme Silveira
+Programmer(Admin) - Faz a manutenção das Ferramentas que vão se utilizar.
+Tracker - Verifica se o andamento está como desejado.
