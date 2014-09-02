@@ -1,0 +1,40 @@
+Projeto Estoque de Cantina
+Visão
+1.	Introdução
+O projeto visa desenvolver um sistema para gerenciamento de estoque de uma Cantina de forma ágil, com foco em funcionalidades dinâmicas.
+
+1.1.	Problemas
+O problema da	Má gestão do estoque
+Afeta	A cantina
+O impacto disso é	Descontrole do que tem no estoque
+Uma solução de sucesso seria	Implantar um sistema de controle de estoque
+
+O problema de	Gastos desnecessários 
+Afeta	O proprietário
+O impacto disso é	Perda de valores
+Uma solução de sucesso seria	Cadastrar o que tem no estoque e o que precisa comprar para o estoque
+
+O problema de	Desperdício de produtos
+Afeta	A Cantina
+O impacto disso é	Perda de produtos por prazo de validade vencido
+Uma solução de sucesso seria	Cadastrar o prazo de validade dos produtos para evitar o desperdício 
+
+1.2.	Envolvidos
+Cliente	Agatha e Jonathan
+ Programador	Guilherme e Henrique Schwab
+Fornecedor do produto	?
+Patrocinador	Proprietário 
+Usuário do sistema	
+Usuário do cadastro	
+Usuario de outros sistemas	GranMoney, ErpNow, Programanex, Controle Dinamico
+
+
+
+1.3.	Características do Sistema
+1.- Cadastro de produtos
+2.- Cadastro de prazo de validade dos produtos
+3.- Controle de prazo de validade
+4.- Controle de entrada e saída de produtos
+5.- Saber a quantidade de cada produto em estoque
+6.- Emitir relatório de produtos mais e menos vendidos
+
