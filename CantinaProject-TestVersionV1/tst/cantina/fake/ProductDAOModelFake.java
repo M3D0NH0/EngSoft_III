@@ -18,7 +18,6 @@ public class ProductDAOModelFake implements ProductDAO {
 		this.pAux = new ArrayList<ProductFake>();
 	}
 
-	@Override
 	public boolean buyProduct(String name, String fornecedor, String fornecDate) {
 		boolean estado = false;
 		ProductFake fake = new ProductFake();
@@ -34,7 +33,6 @@ public class ProductDAOModelFake implements ProductDAO {
 		return estado;
 	}
 
-	@Override
 	public boolean insert(String name, String type, double price, int quantidade) {
 		boolean estado = false;
 		ProductFake fake = new ProductFake();
@@ -51,7 +49,6 @@ public class ProductDAOModelFake implements ProductDAO {
 		return estado;
 	}
 
-	@Override
 	public boolean insertWithDate(String name, String date) {
 		boolean estado = false;
 		ProductFake fake = new ProductFake();
@@ -66,7 +63,6 @@ public class ProductDAOModelFake implements ProductDAO {
 		return estado;
 	}
 
-	@Override
 	public String showAll() {
 		String s = null;
 		for (ProductFake pro : p) {
@@ -76,7 +72,6 @@ public class ProductDAOModelFake implements ProductDAO {
 		return s;
 	}
 
-	@Override
 	public boolean showAllWithQtd(String nome) {
 		boolean estado = false;
 		for (ProductFake pro : p) {
@@ -88,7 +83,6 @@ public class ProductDAOModelFake implements ProductDAO {
 		return estado;
 	}
 
-	@Override
 	public boolean showAllWithDate(String date) {
 		boolean estado = false;
 		for (ProductFake pro : p) {
@@ -100,7 +94,6 @@ public class ProductDAOModelFake implements ProductDAO {
 		return estado;
 	}
 
-	@Override
 	public boolean showAllWithDateBuy(String date) {
 		boolean estado = false;
 		for (ProductFake pro : pAux) {
@@ -112,7 +105,6 @@ public class ProductDAOModelFake implements ProductDAO {
 		return estado;
 	}
 
-	@Override
 	public boolean showFornecAndDate(String fornec) {
 		boolean estado = false;
 		for (ProductFake pro : pAux) {

@@ -6,9 +6,9 @@ package cantina.dao;
 
 public interface ProductDAO {
 
-	boolean insert(String name, String type,double price,int quantidade);
+	public boolean insert(String name, String type,double price,int quantidade);
 		
-	boolean insertWithDate(String name, String date);
+	public boolean insertWithDate(String name, String date);
 	
 	public boolean showAllWithDateBuy(String date);
 	
@@ -16,11 +16,11 @@ public interface ProductDAO {
 	
 	public boolean showFornecAndDate(String fornec);
 	
-	String showAll();
+	public String showAll();
 	
-	boolean showAllWithQtd(String nome);
+	public boolean showAllWithQtd(String nome);
 	
-	boolean showAllWithDate(String date);
+	public boolean showAllWithDate(String date);
 }
 
 
