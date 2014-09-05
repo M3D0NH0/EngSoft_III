@@ -41,7 +41,7 @@ public class ProductModel extends AbstractTableModel {
 
 	@Override
 	public int getColumnCount() {
-		return (5);
+		return (6);
 	}
 
 	@Override
@@ -59,7 +59,9 @@ public class ProductModel extends AbstractTableModel {
 			return (produtos.get(rowIndex).getType());
 		} else if (columnIndex == 3) {
 			return (produtos.get(rowIndex).getDate());
-		} else {
+		} else if(columnIndex == 4){
+			return (produtos.get(rowIndex).getPrice());
+		}else{
 			return (produtos.get(rowIndex).getQuantidade());
 		}
 	}
