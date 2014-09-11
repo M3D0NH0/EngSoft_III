@@ -1,5 +1,9 @@
 package cantina.view.product;
 
+import static java.lang.System.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -20,8 +24,13 @@ public class ProductView extends JFrame {
 	private JMenuItem mntmProdutos;
 	private JMenuItem mntmSair;
 	
-
-	public void iniciaComponentes() {
+	public void init()
+	{
+		iniciaComponentes();
+		addAction();
+	}
+	
+	private void iniciaComponentes() {
 		setResizable(false);
 		setTitle("Cantina Project");
 		setSize(1020, 665);
@@ -39,5 +48,19 @@ public class ProductView extends JFrame {
 		setLocationRelativeTo(null);
 		setVisible(false);
 		setVisible(true);
+	}
+	
+	private void addAction()
+	{
+		 mntmSair.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					if(e.getSource() == mntmSair){
+						exit(0);
+					}
+					
+				}
+			});
 	}
 }

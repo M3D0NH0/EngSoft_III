@@ -9,10 +9,10 @@ import cantina.view.product.ProductView;
  */
 public class CantinaProjectMain {
 
-	private static ProductView init;
+	private static ProductView initialize;
 
 	public static void main(String[] args) {
-		init = new ProductView();
-		init.iniciaComponentes();
+		initialize = new ProductView();
+		initialize.init();
 	}
 }
