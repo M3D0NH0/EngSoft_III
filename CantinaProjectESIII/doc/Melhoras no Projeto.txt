@@ -1,0 +1,20 @@
+-- Correção dos erros de português
+
+-- Adição de novos Lotes
+
+-- adição de colunas PreçoXQuantidade
+
+-- Fundo Cinza
+
+-- Refatoração do ProductFake com Product
+
+-- Ordenação por data de Validade de 30 dias
+
+-- Tirar produtos duvidosos
+
+-- Reescrever historia entrada/saida e estado
+
+-- Apresentação Melhor com ordem de criação do projeto
+
+-- Melhorar Dicção da Apresentação
+
