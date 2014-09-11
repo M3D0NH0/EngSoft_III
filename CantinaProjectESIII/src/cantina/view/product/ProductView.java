@@ -21,6 +21,7 @@ public class ProductView extends JFrame {
 	private ProductTable produtosRela;
 	private JMenuBar menuBar;
 	private JMenu mnMenu;
+	private JMenuItem mntmTabelaGeral;
 	private JMenuItem mntmSair;
 	
 	public void init()
@@ -38,10 +39,11 @@ public class ProductView extends JFrame {
 		setJMenuBar(menuBar);
 		mnMenu = new JMenu("Menu");
 		menuBar.add(mnMenu);
+		mntmTabelaGeral = new JMenuItem("Tabela Geral");
 		mntmSair = new JMenuItem("Sair");
+		mnMenu.add(mntmTabelaGeral);
 		mnMenu.add(mntmSair);
 		produtosRela = new ProductTable();
-		getContentPane().add(produtosRela);
 		setLocationRelativeTo(null);
 		setVisible(false);
 		setVisible(true);
@@ -49,6 +51,18 @@ public class ProductView extends JFrame {
 	
 	private void addAction()
 	{
+		mntmTabelaGeral.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == mntmTabelaGeral){
+					getContentPane().add(produtosRela);
+					setVisible(false);
+					setVisible(true);
+				}
+				
+			}
+		});
 		 mntmSair.addActionListener(new ActionListener() {
 				
 				@Override
