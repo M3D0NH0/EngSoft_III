@@ -18,13 +18,13 @@ import javax.swing.JMenuItem;
  */
 public class ProductView extends JFrame {
 
-	protected ProductTable produtosRela;
-	protected ProductBusca produtosBusca;
+	private ProductTable produtosRela;
+	private ProductBusca produtosBusca;
 	private JMenuBar menuBar;
 	private JMenu mnMenu;
-	protected JMenuItem mntmHome;
-	protected JMenuItem mntmTabelaGeral;
-	protected JMenuItem mntmSair;
+	private JMenuItem mntmHome;
+	private JMenuItem mntmTabelaGeral;
+	private JMenuItem mntmSair;
 	
 	public void init()
 	{
@@ -79,8 +79,5 @@ public class ProductView extends JFrame {
 				exit(0);
 			}
 		}
-	}
-
-		
-		
+	}		
 }
