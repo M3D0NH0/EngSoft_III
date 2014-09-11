@@ -21,7 +21,7 @@ public class ProductTable extends JPanel {
 
 		ProductModel modelo = new ProductModel(colunas);
 		tabela = new JTable(modelo);
-		tabela.setPreferredScrollableViewportSize(new Dimension(1000, 680));
+		tabela.setPreferredScrollableViewportSize(new Dimension(1000, 600));
 		tabela.setFillsViewportHeight(true);
 		tabela.setSize(400, 250);
 		JScrollPane scrollPane = new JScrollPane(tabela);

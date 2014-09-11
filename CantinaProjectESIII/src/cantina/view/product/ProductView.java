@@ -14,7 +14,7 @@ public class ProductView extends JFrame {
 	public void iniciaComponentes() {
 		setResizable(false);
 		setTitle("Cantina Project");
-		setSize(1020, 700);
+		setSize(1020, 665);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		produtosRela = new ProductTable();
 		getContentPane().add(produtosRela);
