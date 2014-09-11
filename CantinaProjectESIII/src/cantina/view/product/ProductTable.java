@@ -17,11 +17,11 @@ public class ProductTable extends JPanel {
 	private JTable tabela;
 
 	public ProductTable() {
-		String[] colunas = { "Código", "Nome", "Tipo", "Validade","Preço (R$)","Quantidade","Lote", "Preço Total (R$)" };
+		String[] colunas = { "CÃ³digo", "Nome", "Tipo", "Validade","PreÃ§o (R$)","Quantidade","Lote", "PreÃ§o Total (R$)" };
 
 		ProductModel modelo = new ProductModel(colunas);
 		tabela = new JTable(modelo);
-		tabela.setPreferredScrollableViewportSize(new Dimension(1000, 600));
+		tabela.setPreferredScrollableViewportSize(new Dimension(1000, 585));
 		tabela.setFillsViewportHeight(true);
 		tabela.setSize(400, 250);
 		JScrollPane scrollPane = new JScrollPane(tabela);

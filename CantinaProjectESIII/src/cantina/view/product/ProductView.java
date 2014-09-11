@@ -21,7 +21,6 @@ public class ProductView extends JFrame {
 	private ProductTable produtosRela;
 	private JMenuBar menuBar;
 	private JMenu mnMenu;
-	private JMenuItem mntmProdutos;
 	private JMenuItem mntmSair;
 	
 	public void init()
@@ -39,9 +38,7 @@ public class ProductView extends JFrame {
 		setJMenuBar(menuBar);
 		mnMenu = new JMenu("Menu");
 		menuBar.add(mnMenu);
-		mntmProdutos = new JMenuItem("Produtos");
 		mntmSair = new JMenuItem("Sair");
-		mnMenu.add(mntmProdutos);
 		mnMenu.add(mntmSair);
 		produtosRela = new ProductTable();
 		getContentPane().add(produtosRela);
