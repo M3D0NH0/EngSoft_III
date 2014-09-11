@@ -18,6 +18,7 @@ public class ProductView extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		produtosRela = new ProductTable();
 		getContentPane().add(produtosRela);
+		setLocationRelativeTo(null);
 		setVisible(false);
 		setVisible(true);
 	}
