@@ -8,11 +8,11 @@ package cantina.model;
 public class Product {
 
 	private String name, type, date;
-	private double price;
+	private double price, totalprice;
 	private int id, quantidade,lote;
 
 	public Product(int id, String name, String type, String date, double price,
-			int quantidade,int lote) {
+			int quantidade,int lote,double totalprice) {
 		this.id = id;
 		this.name = name;
 		this.type = type;
@@ -20,6 +20,7 @@ public class Product {
 		this.price = price;
 		this.quantidade = quantidade;
 		this.lote = lote;
+		this.totalprice = totalprice;
 	}
 
 	public String getName() {
@@ -78,6 +79,16 @@ public class Product {
 	public int getLote()
 	{
 		return lote;
+	}
+	
+	public void setTotalPrice(double totalprice)
+	{
+		this.totalprice = totalprice;
+	}
+	
+	public double getTotalPrice()
+	{
+		return totalprice;
 	}
 	
 	

@@ -63,8 +63,10 @@ public class ProductModel extends AbstractTableModel {
 			return (produtos.get(rowIndex).getPrice());
 		}else if(columnIndex == 5){
 			return (produtos.get(rowIndex).getQuantidade());
-		}else{
+		}else if(columnIndex == 6){
 			return (produtos.get(rowIndex).getLote());
+		}else{
+			return (produtos.get(rowIndex).getTotalPrice());
 		}
 	}
 
