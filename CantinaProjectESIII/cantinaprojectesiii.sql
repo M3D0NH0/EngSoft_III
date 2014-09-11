@@ -29,7 +29,16 @@ update produtos set lote='1' where nome='Água';
 update produtos set lote='1' where nome='Pão de Queijo';
 update produtos set lote='1' where nome='Mini Pizza';
 
+alter table produtos add column precototal numeric(10,2);
+
 select * from produtos
+
+update produtos set precototal=quantidade*preco where id=1;
+update produtos set precototal=quantidade*preco where id=2;
+update produtos set precototal=quantidade*preco where id=3;
+update produtos set precototal=quantidade*preco where id=4;
+update produtos set precototal=quantidade*preco where id=5;
+update produtos set precototal=quantidade*preco where id=6;
 
 
 
