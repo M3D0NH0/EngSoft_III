@@ -30,7 +30,8 @@ public class ProductDAODB extends Connect implements ProductDAO {
 						resultado.getString("tipo"),
 						resultado.getString("validade"),
 						resultado.getDouble("preco"),
-						resultado.getInt("quantidade"));
+						resultado.getInt("quantidade"),
+						resultado.getInt("lote"));
 				listaProduct.add(product);
 			}
 			fecharConexao();

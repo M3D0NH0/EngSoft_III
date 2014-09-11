@@ -9,16 +9,17 @@ public class Product {
 
 	private String name, type, date;
 	private double price;
-	private int id, quantidade;
+	private int id, quantidade,lote;
 
 	public Product(int id, String name, String type, String date, double price,
-			int quantidade) {
+			int quantidade,int lote) {
 		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.date = date;
 		this.price = price;
 		this.quantidade = quantidade;
+		this.lote = lote;
 	}
 
 	public String getName() {
@@ -69,4 +70,15 @@ public class Product {
 		this.id = id;
 	}
 
+	public void setLote(int lote)
+	{
+		this.lote = lote;
+	}
+	
+	public int getLote()
+	{
+		return lote;
+	}
+	
+	
 }
