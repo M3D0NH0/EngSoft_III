@@ -18,3 +18,4 @@
 
 -- Melhorar Dicção da Apresentação
 
+-- Adicionar Cifrão no Preço
