@@ -21,14 +21,13 @@ public class ProductModel extends AbstractTableModel {
 	public ProductModel() {
 		produtos = new ArrayList<Product>();
 	}
-
+	
+	
 	public ProductModel(String[] header) {
 		this.header = header;
-		ProductDAO dao = new ProductDAODB();
-		Product p = new  Product();
-		p.setDate("2014/02/01");
+		ProductDAODB dao = new ProductDAODB();
+		Product p = new Product();
 		this.produtos = dao.getProdutosDia(p);
-
 	}
 
 	public ProductModel(String[] header, List<Product> produtos) {
@@ -43,7 +42,7 @@ public class ProductModel extends AbstractTableModel {
 
 	@Override
 	public int getColumnCount() {
-		return (8);
+		return (3);
 	}
 
 	@Override
@@ -57,18 +56,8 @@ public class ProductModel extends AbstractTableModel {
 			return (produtos.get(rowIndex).getID());
 		} else if (columnIndex == 1) {
 			return (produtos.get(rowIndex).getName());
-		} else if (columnIndex == 2) {
-			return (produtos.get(rowIndex).getType());
-		} else if (columnIndex == 3) {
+		} else {
 			return (produtos.get(rowIndex).getDate());
-		} else if(columnIndex == 4){
-			return (produtos.get(rowIndex).getPrice());
-		}else if(columnIndex == 5){
-			return (produtos.get(rowIndex).getQuantidade());
-		}else if(columnIndex == 6){
-			return (produtos.get(rowIndex).getLote());
-		}else{
-			return (produtos.get(rowIndex).getTotalPrice());
 		}
 	}
 

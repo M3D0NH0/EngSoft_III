@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import cantina.dao.ProductDAO;
 import cantina.db.ProductDAODB;
 import cantina.model.Product;
 
@@ -34,7 +35,7 @@ public class ProductBusca extends JPanel {
 	private void iniciaComponentes(){
 		pro = new Product();
 		product = new ProductDAODB();
-		lblBuscaProduto = new JLabel("Busca por Data");
+		lblBuscaProduto = new JLabel("Busca por Data de Validade");
 		textFieldBusca = new JTextField();
 		btnLimpar = new JButton("Limpar");
 		btnBuscar = new JButton("Buscar");
