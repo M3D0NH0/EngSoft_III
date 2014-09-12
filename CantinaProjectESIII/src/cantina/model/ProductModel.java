@@ -25,7 +25,9 @@ public class ProductModel extends AbstractTableModel {
 	public ProductModel(String[] header) {
 		this.header = header;
 		ProductDAO dao = new ProductDAODB();
-		this.produtos = dao.getTodosProdutos();
+		Product p = new  Product();
+		p.setDate("2014/02/01");
+		this.produtos = dao.getProdutosDia(p);
 
 	}
 
