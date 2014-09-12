@@ -40,6 +40,15 @@ public class ProductBusca extends JPanel {
 		btnLimpar = new JButton("Limpar");
 		btnBuscar = new JButton("Buscar");
 	}
+	
+	private Product p = new Product();
+	public void setPro(Product p){
+		this.p = p;
+	}
+	public Product getPro(){
+		return this.p;
+	}
+	
 
 	private void addComponentes() {
 		setLayout(null);
@@ -68,6 +77,7 @@ public class ProductBusca extends JPanel {
 					data = textFieldBusca.getText();
 					pro.setDate(data);
 					product.getProdutosDia(pro);
+					setPro(pro);
 				}
 
 			}
