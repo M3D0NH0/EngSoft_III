@@ -15,12 +15,12 @@ import javax.swing.JMenuItem;
  *
  */
 public class ProductView extends JFrame {
-	public ProductView() {
-	}
 
 	private ProductTable produtosRela;
+	private ProductBusca produtosBusca;
 	private JMenuBar menuBar;
 	private JMenu mnMenu;
+	private JMenuItem mntmHome;
 	private JMenuItem mntmTabelaGeral;
 	private JMenuItem mntmSair;
 	
@@ -39,18 +39,35 @@ public class ProductView extends JFrame {
 		setJMenuBar(menuBar);
 		mnMenu = new JMenu("Menu");
 		menuBar.add(mnMenu);
+		mntmHome = new JMenuItem("Home");
 		mntmTabelaGeral = new JMenuItem("Tabela Geral");
 		mntmSair = new JMenuItem("Sair");
+		mnMenu.add(mntmHome);
 		mnMenu.add(mntmTabelaGeral);
 		mnMenu.add(mntmSair);
 		produtosRela = new ProductTable();
+		produtosBusca = new ProductBusca();
 		setLocationRelativeTo(null);
+		getContentPane().add(produtosBusca);
 		setVisible(false);
 		setVisible(true);
 	}
 	
-	private void addAction()
-	{
+	private void addAction(){
+		
+		mntmHome.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == mntmHome){
+					getContentPane().add(produtosBusca);
+					setVisible(false);
+					setVisible(true);
+				}
+				
+			}
+		});
+		
 		mntmTabelaGeral.addActionListener(new ActionListener() {
 			
 			@Override
@@ -63,6 +80,7 @@ public class ProductView extends JFrame {
 				
 			}
 		});
+		
 		 mntmSair.addActionListener(new ActionListener() {
 				
 				@Override

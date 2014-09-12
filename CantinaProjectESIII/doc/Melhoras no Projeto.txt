@@ -1,21 +1,14 @@
--- Correção dos erros de português
-
--- Adição de novos Lotes
-
--- adição de colunas PreçoXQuantidade
 
 -- Fundo Cinza
 
--- Refatoração do ProductFake com Product
+-- Refatoraï¿½ï¿½o do ProductFake com Product
 
--- Ordenação por data de Validade de 30 dias
-
--- Tirar produtos duvidosos
+-- Ordenaï¿½ï¿½o por data de Validade de 30 dias
 
 -- Reescrever historia entrada/saida e estado
 
--- Apresentação Melhor com ordem de criação do projeto
+-- Apresentaï¿½ï¿½o Melhor com ordem de criaï¿½ï¿½o do projeto
 
--- Melhorar Dicção da Apresentação
+-- Melhorar Dicï¿½ï¿½o da Apresentaï¿½ï¿½o
 
--- Adicionar Cifrão no Preço
+-- Adicionar Cifrï¿½o no Preï¿½o
