@@ -10,6 +10,6 @@ import javax.swing.JPanel;
 public class ProductBusca extends JPanel{
 
 	public ProductBusca(){
-		setVisible(true);
+
 	}
 }

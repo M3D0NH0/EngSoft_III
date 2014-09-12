@@ -1,6 +1,8 @@
 package cantina.view.product;
 
 import static java.lang.System.*;
+
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,13 +18,13 @@ import javax.swing.JMenuItem;
  */
 public class ProductView extends JFrame {
 
-	private ProductTable produtosRela;
-	private ProductBusca produtosBusca;
+	protected ProductTable produtosRela;
+	protected ProductBusca produtosBusca;
 	private JMenuBar menuBar;
 	private JMenu mnMenu;
-	private JMenuItem mntmHome;
-	private JMenuItem mntmTabelaGeral;
-	private JMenuItem mntmSair;
+	protected JMenuItem mntmHome;
+	protected JMenuItem mntmTabelaGeral;
+	protected JMenuItem mntmSair;
 	
 	public void init()
 	{
@@ -42,54 +44,43 @@ public class ProductView extends JFrame {
 		mntmHome = new JMenuItem("Home");
 		mntmTabelaGeral = new JMenuItem("Tabela Geral");
 		mntmSair = new JMenuItem("Sair");
+		produtosRela = new ProductTable();
+		produtosBusca = new ProductBusca();
 		mnMenu.add(mntmHome);
 		mnMenu.add(mntmTabelaGeral);
 		mnMenu.add(mntmSair);
-		produtosRela = new ProductTable();
-		produtosBusca = new ProductBusca();
 		setLocationRelativeTo(null);
-		getContentPane().add(produtosBusca);
 		setVisible(false);
 		setVisible(true);
 	}
 	
+	
 	private void addAction(){
-		
-		mntmHome.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(e.getSource() == mntmHome){
-					getContentPane().add(produtosBusca);
-					setVisible(false);
-					setVisible(true);
-				}
-				
-			}
-		});
-		
-		mntmTabelaGeral.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if(e.getSource() == mntmTabelaGeral){
-					getContentPane().add(produtosRela);
-					setVisible(false);
-					setVisible(true);
-				}
-				
-			}
-		});
-		
-		 mntmSair.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					if(e.getSource() == mntmSair){
-						exit(0);
-					}
-					
-				}
-			});
+		mntmHome.addActionListener(new Tratador());
+		mntmTabelaGeral.addActionListener(new Tratador());
+		mntmSair.addActionListener(new Tratador());
 	}
+	
+	public class Tratador implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == mntmHome) {
+				getContentPane().removeAll();
+				getContentPane().add(produtosBusca, new BorderLayout().SOUTH);
+				setVisible(false);
+				setVisible(true);
+			} else if (e.getSource() == mntmTabelaGeral) {
+				getContentPane().removeAll();
+				getContentPane().add(produtosRela,new BorderLayout().SOUTH);
+				setVisible(false);
+				setVisible(true);
+			} else if (e.getSource() == mntmSair) {
+				exit(0);
+			}
+		}
+	}
+
+		
+		
 }
