@@ -11,6 +11,8 @@ public class Product {
 	private double price, totalprice;
 	private int id, quantidade,lote;
 
+	public Product(){}
+	
 	public Product(int id, String name, String type, String date, double price,
 			int quantidade,int lote,double totalprice) {
 		this.id = id;

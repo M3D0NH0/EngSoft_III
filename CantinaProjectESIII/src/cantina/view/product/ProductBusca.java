@@ -2,10 +2,14 @@ package cantina.view.product;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import cantina.db.ProductDAODB;
+import cantina.model.Product;
 
 /**
  * 
@@ -14,6 +18,8 @@ import javax.swing.JTextField;
  */
 public class ProductBusca extends JPanel {
 	
+	private Product pro;
+	private ProductDAODB product;
 	private JTextField textFieldBusca;
 	private JLabel lblBuscaProduto;
 	private JButton btnLimpar;
@@ -25,7 +31,9 @@ public class ProductBusca extends JPanel {
 		addComponentes();
 	}
 
-	private void iniciaComponentes() {
+	private void iniciaComponentes(){
+		pro = new Product();
+		product = new ProductDAODB();
 		lblBuscaProduto = new JLabel("Busca por Data");
 		textFieldBusca = new JTextField();
 		btnLimpar = new JButton("Limpar");
@@ -57,6 +65,8 @@ public class ProductBusca extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				if (arg0.getSource().equals(btnBuscar)) {
 					data = textFieldBusca.getText();
+					pro.setDate(data);
+					product.getProdutosDia(pro);
 				}
 
 			}
