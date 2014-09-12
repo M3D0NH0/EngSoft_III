@@ -49,6 +49,7 @@ public class ProductView extends JFrame {
 		mnMenu.add(mntmHome);
 		mnMenu.add(mntmTabelaGeral);
 		mnMenu.add(mntmSair);
+		getContentPane().add(produtosBusca, new BorderLayout().CENTER);
 		setLocationRelativeTo(null);
 		setVisible(false);
 		setVisible(true);
@@ -67,12 +68,12 @@ public class ProductView extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == mntmHome) {
 				getContentPane().removeAll();
-				getContentPane().add(produtosBusca, new BorderLayout().SOUTH);
+				getContentPane().add(produtosBusca, new BorderLayout().CENTER);
 				setVisible(false);
 				setVisible(true);
 			} else if (e.getSource() == mntmTabelaGeral) {
 				getContentPane().removeAll();
-				getContentPane().add(produtosRela,new BorderLayout().SOUTH);
+				getContentPane().add(produtosRela,new BorderLayout().CENTER);
 				setVisible(false);
 				setVisible(true);
 			} else if (e.getSource() == mntmSair) {
