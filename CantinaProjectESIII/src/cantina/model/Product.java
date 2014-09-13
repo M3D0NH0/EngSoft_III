@@ -9,7 +9,7 @@ public class Product {
 
 	private String name, type, date;
 	private double price, totalprice;
-	private int id, quantidade,lote;
+	private int id, quantidade, lote;
 
 	public Product(){}
 	
@@ -23,6 +23,12 @@ public class Product {
 		this.quantidade = quantidade;
 		this.lote = lote;
 		this.totalprice = totalprice;
+	}
+
+	public Product(int id, String name, String date) {
+		this.id = id;
+		this.name = name;
+		this.date = date;
 	}
 
 	public String getName() {

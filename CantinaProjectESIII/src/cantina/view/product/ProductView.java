@@ -18,12 +18,12 @@ import javax.swing.JSplitPane;
  *
  */
 public class ProductView extends JFrame {
+	
 	public ProductView() {
 	}
 
 	private ProductView home;
-	private JSplitPane splitPane;
-	private ProductTable produtosRela;
+	protected static JSplitPane splitPane;
 	private ProductBusca produtosBusca;
 	private JMenuBar menuBar;
 	private JMenu mnMenu;
@@ -49,13 +49,12 @@ public class ProductView extends JFrame {
 		menuBar.add(mnMenu);
 		mntmHome = new JMenuItem("Home");
 		mntmSair = new JMenuItem("Sair");
-		produtosRela = new ProductTable();
 		produtosBusca = new ProductBusca();
 		mnMenu.add(mntmHome);
 		mnMenu.add(mntmSair);
 		getContentPane().add(splitPane, new BorderLayout().CENTER);
 		splitPane.setLeftComponent(produtosBusca);
-		splitPane.setRightComponent(produtosRela);
+		splitPane.setRightComponent(null);
 		setLocationRelativeTo(null);
 		splitPane.setDividerLocation(200);
 		setVisible(false);

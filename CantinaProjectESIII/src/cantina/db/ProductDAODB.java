@@ -18,30 +18,25 @@ import cantina.model.Product;
 public class ProductDAODB extends Connect implements ProductDAO {
 
 	@Override
-	public List<Product> getProdutosDia(Product pro) {
-		List<Product> listaFunc = new ArrayList<>();
+	public List<Product> getProdutosDia() {
+		List<Product> listaProduct = new ArrayList<>();
 		try {
 
 			iniciaConexao("SELECT * FROM PRODUTOS WHERE VALIDADE=?");
-			comando.setString(1,pro.getDate());
+			comando.setString(1,"2014/02/01"); //TODO
 			ResultSet resultado = comando.executeQuery();
 			while (resultado.next()) {
 				Product product = new Product(resultado.getInt("id"),
 						resultado.getString("nome"),
-						resultado.getString("tipo"),
-						resultado.getString("validade"),
-						resultado.getDouble("preco"),
-						resultado.getInt("quantidade"),
-						resultado.getInt("lote"),
-						resultado.getDouble("precototal"));
-				listaFunc.add(product);
+						resultado.getString("validade"));
+				listaProduct.add(product);
 			}
 			fecharConexao();
 		} catch (ClassNotFoundException | SQLException ex) {
 			Logger.getLogger(ProductDAODB.class.getName()).log(
 					Level.SEVERE, null, ex);
 		}
-		return (listaFunc);
+		return (listaProduct);
 	}
 
 	

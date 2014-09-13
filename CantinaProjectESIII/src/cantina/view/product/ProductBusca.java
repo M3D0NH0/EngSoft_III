@@ -8,9 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import cantina.dao.ProductDAO;
 import cantina.db.ProductDAODB;
-import cantina.model.Product;
 
 /**
  * 
@@ -19,13 +17,14 @@ import cantina.model.Product;
  */
 public class ProductBusca extends JPanel {
 	
-	private Product pro;
 	private ProductDAODB product;
 	private JTextField textFieldBusca;
 	private JLabel lblBuscaProduto;
 	private JButton btnLimpar;
 	private JButton btnBuscar;
 	private String data;
+	private ProductTable produtosRela;
+
 
 	public ProductBusca() {
 		iniciaComponentes();
@@ -33,22 +32,13 @@ public class ProductBusca extends JPanel {
 	}
 
 	private void iniciaComponentes(){
-		pro = new Product();
+		produtosRela = new ProductTable();
 		product = new ProductDAODB();
 		lblBuscaProduto = new JLabel("Busca por Data de Validade");
 		textFieldBusca = new JTextField();
 		btnLimpar = new JButton("Limpar");
 		btnBuscar = new JButton("Buscar");
 	}
-	
-	private Product p = new Product();
-	public void setPro(Product p){
-		this.p = p;
-	}
-	public Product getPro(){
-		return this.p;
-	}
-	
 
 	private void addComponentes() {
 		setLayout(null);
@@ -75,14 +65,13 @@ public class ProductBusca extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				if (arg0.getSource().equals(btnBuscar)) {
 					data = textFieldBusca.getText();
-					pro.setDate(data);
-					product.getProdutosDia(pro);
-					setPro(pro);
+					ProductView.splitPane.setRightComponent(produtosRela);
+					ProductView.splitPane.setDividerLocation(200);
 				}
-
 			}
 		});
 		btnBuscar.setBounds(28, 214, 110, 23);
 		add(btnBuscar);
 	}
+
 }
