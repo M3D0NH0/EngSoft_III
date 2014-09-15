@@ -1,6 +1,7 @@
 package cantina.model;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
@@ -15,16 +16,13 @@ import cantina.db.ProductDAODB;
 public class ProductModel extends AbstractTableModel {
 
 	private String header[];
-	private List<Product> produtos;
+	private List<Product> produtos = new ArrayList<Product>();
+	private ProductDAODB dao = new ProductDAODB();
 
-	public ProductModel() {
-		produtos = new ArrayList<Product>();
-	}
 
-	public ProductModel(String[] header) {
-		this.header = header;
-		ProductDAODB dao = new ProductDAODB();
-		this.produtos = dao.getProdutosDia();
+	public ProductModel(String[] header,String data) {
+			this.header = header;
+			this.produtos = dao.getProdutosDia(data);
 	}
 
 	public ProductModel(String[] header, List<Product> produtos) {
@@ -41,6 +39,7 @@ public class ProductModel extends AbstractTableModel {
 	public int getColumnCount() {
 		return (3);
 	}
+
 
 	@Override
 	public String getColumnName(int column) {

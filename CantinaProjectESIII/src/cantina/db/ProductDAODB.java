@@ -16,14 +16,14 @@ import cantina.model.Product;
  *
  */
 public class ProductDAODB extends Connect implements ProductDAO {
-
+	
 	@Override
-	public List<Product> getProdutosDia() {
+	public List<Product> getProdutosDia(String data) {
 		List<Product> listaProduct = new ArrayList<>();
 		try {
 
 			iniciaConexao("SELECT * FROM PRODUTOS WHERE VALIDADE=?");
-			comando.setString(1,"2014/02/01"); //TODO
+			comando.setString(1,data);
 			ResultSet resultado = comando.executeQuery();
 			while (resultado.next()) {
 				Product product = new Product(resultado.getInt("id"),

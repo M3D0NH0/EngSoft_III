@@ -8,8 +8,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import cantina.db.ProductDAODB;
-
 /**
  * 
  * @author HSG
@@ -17,13 +15,12 @@ import cantina.db.ProductDAODB;
  */
 public class ProductBusca extends JPanel {
 	
-	private ProductDAODB product;
 	private JTextField textFieldBusca;
 	private JLabel lblBuscaProduto;
 	private JButton btnLimpar;
 	private JButton btnBuscar;
 	private String data;
-	private ProductTable produtosRela;
+
 
 
 	public ProductBusca() {
@@ -32,8 +29,6 @@ public class ProductBusca extends JPanel {
 	}
 
 	private void iniciaComponentes(){
-		produtosRela = new ProductTable();
-		product = new ProductDAODB();
 		lblBuscaProduto = new JLabel("Busca por Data de Validade");
 		textFieldBusca = new JTextField();
 		btnLimpar = new JButton("Limpar");
@@ -65,6 +60,7 @@ public class ProductBusca extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				if (arg0.getSource().equals(btnBuscar)) {
 					data = textFieldBusca.getText();
+				    ProductTable produtosRela = new ProductTable(data);
 					ProductView.splitPane.setRightComponent(produtosRela);
 					ProductView.splitPane.setDividerLocation(200);
 				}

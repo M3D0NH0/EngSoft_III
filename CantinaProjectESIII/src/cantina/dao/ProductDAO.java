@@ -11,7 +11,7 @@ import cantina.model.Product;
  */
 public interface ProductDAO {
 
-	public List<Product> getProdutosDia();
+	public List<Product> getProdutosDia(String data);
 	
 	public List<Product> getTodosProdutos();
 }
