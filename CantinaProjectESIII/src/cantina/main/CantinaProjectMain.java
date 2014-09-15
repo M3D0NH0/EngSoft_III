@@ -4,7 +4,7 @@ import cantina.view.product.ProductView;
 
 /**
  * 
- * @author HSG
+ * @author HSG, M3D0NH0
  *
  */
 public class CantinaProjectMain {

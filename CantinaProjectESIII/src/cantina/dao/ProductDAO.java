@@ -6,12 +6,12 @@ import cantina.model.Product;
 
 /**
  * 
- * @author HSG
+ * @author HSG, M3D0NH0
  *
  */
 public interface ProductDAO {
 
 	public List<Product> getProdutosDia(String data);
-	
+
 	public List<Product> getTodosProdutos();
 }

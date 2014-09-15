@@ -10,7 +10,7 @@ import cantina.db.ProductDAODB;
 
 /**
  * 
- * @author HSG
+ * @author HSG, M3D0NH0
  *
  */
 public class ProductModel extends AbstractTableModel {
@@ -19,10 +19,9 @@ public class ProductModel extends AbstractTableModel {
 	private List<Product> produtos = new ArrayList<Product>();
 	private ProductDAODB dao = new ProductDAODB();
 
-
-	public ProductModel(String[] header,String data) {
-			this.header = header;
-			this.produtos = dao.getProdutosDia(data);
+	public ProductModel(String[] header, String data) {
+		this.header = header;
+		this.produtos = dao.getProdutosDia(data);
 	}
 
 	public ProductModel(String[] header, List<Product> produtos) {
@@ -39,7 +38,6 @@ public class ProductModel extends AbstractTableModel {
 	public int getColumnCount() {
 		return (3);
 	}
-
 
 	@Override
 	public String getColumnName(int column) {

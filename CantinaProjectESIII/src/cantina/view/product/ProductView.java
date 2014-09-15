@@ -6,7 +6,9 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -14,11 +16,11 @@ import javax.swing.JSplitPane;
 
 /**
  * 
- * @author HSG
+ * @author HSG, M3D0NH0
  *
  */
 public class ProductView extends JFrame {
-	
+
 	public ProductView() {
 	}
 
@@ -40,7 +42,7 @@ public class ProductView extends JFrame {
 		splitPane = new JSplitPane();
 		splitPane.setBounds(0, 11, 1010, 590);
 		setResizable(false);
-		setTitle("Cantina Project");
+		setTitle("Cantina D'Italia");
 		setSize(1020, 665);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		menuBar = new JMenuBar();
@@ -54,7 +56,7 @@ public class ProductView extends JFrame {
 		mnMenu.add(mntmSair);
 		getContentPane().add(splitPane, new BorderLayout().CENTER);
 		splitPane.setLeftComponent(produtosBusca);
-		splitPane.setRightComponent(null);
+		splitPane.setRightComponent(new JLabel(new ImageIcon("img/cantinaditalia.jpg")));
 		setLocationRelativeTo(null);
 		splitPane.setDividerLocation(200);
 		setVisible(false);
@@ -72,7 +74,12 @@ public class ProductView extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == mntmHome) {
 				getContentPane().removeAll();
+				setJMenuBar(menuBar);
 				getContentPane().add(splitPane, new BorderLayout().CENTER);
+				splitPane.setLeftComponent(produtosBusca);
+				splitPane.setRightComponent(new JLabel(new ImageIcon("img/cantinaditalia.jpg")));
+				setLocationRelativeTo(null);
+				splitPane.setDividerLocation(200);
 				setVisible(false);
 				setVisible(true);
 			} else if (e.getSource() == mntmSair) {

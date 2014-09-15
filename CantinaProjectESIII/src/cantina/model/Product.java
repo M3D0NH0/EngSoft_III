@@ -2,7 +2,7 @@ package cantina.model;
 
 /**
  * 
- * @author HSG
+ * @author HSG, M3D0NH0
  *
  */
 public class Product {
@@ -11,10 +11,11 @@ public class Product {
 	private double price, totalprice;
 	private int id, quantidade, lote;
 
-	public Product(){}
-	
+	public Product() {
+	}
+
 	public Product(int id, String name, String type, String date, double price,
-			int quantidade,int lote,double totalprice) {
+			int quantidade, int lote, double totalprice) {
 		this.id = id;
 		this.name = name;
 		this.type = type;
@@ -79,25 +80,20 @@ public class Product {
 		this.id = id;
 	}
 
-	public void setLote(int lote)
-	{
+	public void setLote(int lote) {
 		this.lote = lote;
 	}
-	
-	public int getLote()
-	{
+
+	public int getLote() {
 		return lote;
 	}
-	
-	public void setTotalPrice(double totalprice)
-	{
+
+	public void setTotalPrice(double totalprice) {
 		this.totalprice = totalprice;
 	}
-	
-	public double getTotalPrice()
-	{
+
+	public double getTotalPrice() {
 		return totalprice;
 	}
-	
-	
+
 }

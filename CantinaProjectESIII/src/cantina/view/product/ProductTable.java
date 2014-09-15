@@ -10,17 +10,17 @@ import cantina.model.ProductModel;
 
 /**
  * 
- * @author HSG
+ * @author HSG, M3D0NH0
  *
  */
 public class ProductTable extends JPanel {
 	private JTable tabela;
 
 	public ProductTable(String data) {
-		
+
 		String[] colunas = { "Código", "Nome", "Validade" };
 
-		ProductModel modelo = new ProductModel(colunas,data);
+		ProductModel modelo = new ProductModel(colunas, data);
 		tabela = new JTable(modelo);
 		tabela.setPreferredScrollableViewportSize(new Dimension(780, 575));
 		tabela.setFillsViewportHeight(true);
@@ -33,5 +33,4 @@ public class ProductTable extends JPanel {
 		return tabela;
 	}
 
-   
 }
