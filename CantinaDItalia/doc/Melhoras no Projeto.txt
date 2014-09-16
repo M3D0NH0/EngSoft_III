@@ -1,5 +1,4 @@
 
--- Fundo Cinza
 
 -- Refatora��o do ProductFake com Product
 
@@ -11,4 +10,3 @@
 
 -- Melhorar Dic��o da Apresenta��o
 
--- Adicionar Cifr�o no Pre�o
