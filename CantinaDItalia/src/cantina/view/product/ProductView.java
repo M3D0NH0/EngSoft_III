@@ -3,6 +3,7 @@ package cantina.view.product;
 import static java.lang.System.*;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -61,6 +62,8 @@ public class ProductView extends JFrame {
 		splitPane.setDividerLocation(200);
 		setVisible(false);
 		setVisible(true);
+		splitPane.setBackground(Color.GRAY);
+		produtosBusca.setBackground(Color.GRAY);
 	}
 
 	private void addAction() {

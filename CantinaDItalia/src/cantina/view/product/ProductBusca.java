@@ -1,5 +1,7 @@
 package cantina.view.product;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Closeable;
@@ -39,13 +41,16 @@ public class ProductBusca extends JPanel {
 		setLayout(null);
 		lblBuscaProduto.setBounds(26, 51, 110, 37);
 		add(lblBuscaProduto);
-
+		lblBuscaProduto.setForeground(Color.WHITE);
+		
+		
 		textFieldBusca.setBounds(26, 99, 110, 20);
 		add(textFieldBusca);
 		textFieldBusca.setColumns(10);
-
+		
 		btnLimpar.setBounds(28, 154, 108, 23);
 		add(btnLimpar);
+		btnLimpar.setBackground(Color.WHITE);
 		btnLimpar.addActionListener(new ActionListener() {
 
 			@Override
@@ -54,6 +59,7 @@ public class ProductBusca extends JPanel {
 			}
 		});
 
+		btnBuscar.setBackground(Color.WHITE);
 		btnBuscar.addActionListener(new ActionListener() {
 
 			@Override
@@ -66,6 +72,7 @@ public class ProductBusca extends JPanel {
 					data = textFieldBusca.getText();
 					ProductTable produtosRela = new ProductTable(data);
 					ProductView.splitPane.setRightComponent(produtosRela);
+					produtosRela.setBackground(Color.GRAY);
 					ProductView.splitPane.setDividerLocation(200);
 					textFieldBusca.setText(null);
 					JOptionPane.showMessageDialog(null, "Busca realizada");
