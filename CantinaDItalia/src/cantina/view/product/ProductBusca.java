@@ -39,12 +39,12 @@ public class ProductBusca extends JPanel {
 
 	private void addComponentes() {
 		setLayout(null);
-		lblBuscaProduto.setBounds(26, 51, 110, 37);
+		lblBuscaProduto.setBounds(26, 77, 110, 37);
 		add(lblBuscaProduto);
 		lblBuscaProduto.setForeground(Color.WHITE);
 		
 		
-		textFieldBusca.setBounds(26, 99, 110, 20);
+		textFieldBusca.setBounds(26, 113, 110, 20);
 		add(textFieldBusca);
 		textFieldBusca.setColumns(10);
 		
@@ -80,7 +80,7 @@ public class ProductBusca extends JPanel {
 				}
 			}
 		});
-		btnBuscar.setBounds(28, 214, 108, 23);
+		btnBuscar.setBounds(28, 181, 108, 23);
 		add(btnBuscar);
 	}
 
