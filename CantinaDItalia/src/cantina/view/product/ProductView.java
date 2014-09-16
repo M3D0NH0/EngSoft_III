@@ -36,6 +36,8 @@ public class ProductView extends JFrame {
 	public void init() {
 		iniciaComponentes();
 		addAction();
+		ImageIcon img = new ImageIcon("img/cantinalogo.jpg");
+		setIconImage(img.getImage());
 	}
 
 	private void iniciaComponentes() {
