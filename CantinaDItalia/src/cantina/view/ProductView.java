@@ -39,7 +39,7 @@ public class ProductView extends JFrame {
 	public void init() {
 		iniciaComponentes();
 		addAction();
-		addMn();
+		addMnemonic();
 		ImageIcon img = new ImageIcon("img/cantinalogo.jpg");
 		setIconImage(img.getImage());
 	}
@@ -76,7 +76,7 @@ public class ProductView extends JFrame {
 		mntmSair.addActionListener(new Tratador());
 	}
 	
-	private void addMn(){
+	private void addMnemonic(){
 			mntmHome.setMnemonic(KeyEvent.VK_H);
 			mntmHome.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,
 					ActionEvent.CTRL_MASK));
