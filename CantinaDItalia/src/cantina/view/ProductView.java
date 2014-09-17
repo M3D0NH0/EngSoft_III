@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -14,6 +15,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JSplitPane;
+import javax.swing.KeyStroke;
 
 /**
  * 
@@ -37,6 +39,7 @@ public class ProductView extends JFrame {
 	public void init() {
 		iniciaComponentes();
 		addAction();
+		addMn();
 		ImageIcon img = new ImageIcon("img/cantinalogo.jpg");
 		setIconImage(img.getImage());
 	}
@@ -72,6 +75,21 @@ public class ProductView extends JFrame {
 		mntmBuscaValidade.addActionListener(new Tratador());
 		mntmSair.addActionListener(new Tratador());
 	}
+	
+	private void addMn(){
+			mntmHome.setMnemonic(KeyEvent.VK_H);
+			mntmHome.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,
+					ActionEvent.CTRL_MASK));
+
+			mntmBuscaValidade.setMnemonic(KeyEvent.VK_B);
+			mntmBuscaValidade.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B,
+					ActionEvent.CTRL_MASK));
+
+			mntmSair.setMnemonic(KeyEvent.VK_W);
+			mntmSair.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4,
+					ActionEvent.ALT_MASK));
+	}
+	
 
 	public class Tratador implements ActionListener {
 
