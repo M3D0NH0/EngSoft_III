@@ -104,6 +104,7 @@ public class ProductView extends JFrame {
 				setLocationRelativeTo(null);
 				splitPane.setDividerLocation(200);
 				splitPane.setBackground(Color.GRAY);
+				splitPane.setEnabled(false);
 				produtosBusca.setBackground(Color.GRAY);
 				setVisible(false);
 				setVisible(true);

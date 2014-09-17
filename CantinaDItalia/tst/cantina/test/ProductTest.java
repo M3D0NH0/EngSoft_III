@@ -5,11 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import cantina.fake.ProductDAOModelFake;
-
 /**
  * 
- * @author HSG
+ * @author HSG, M3D0NH0
  *
  */
 public class ProductTest {

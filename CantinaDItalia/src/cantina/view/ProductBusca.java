@@ -74,6 +74,7 @@ public class ProductBusca extends JPanel {
 					ProductView.splitPane.setRightComponent(produtosRela);
 					produtosRela.setBackground(Color.GRAY);
 					ProductView.splitPane.setDividerLocation(200);
+					ProductView.splitPane.setEnabled(false);
 					textFieldBusca.setText(null);
 					JOptionPane.showMessageDialog(null, "Busca realizada");
 					}

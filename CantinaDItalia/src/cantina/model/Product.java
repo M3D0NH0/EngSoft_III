@@ -7,13 +7,18 @@ package cantina.model;
  */
 public class Product {
 
-	private String name, type, date;
+	private String name, type, date, fornec, fornecDate;
 	private double price, totalprice;
 	private int id, quantidade, lote;
 
-	public Product() {
-	}
+	public Product() {}
 
+	public Product(int id, String name, String date) {
+		this.id = id;
+		this.name = name;
+		this.date = date;
+	}
+	
 	public Product(int id, String name, String type, String date, double price,
 			int quantidade, int lote, double totalprice) {
 		this.id = id;
@@ -26,14 +31,40 @@ public class Product {
 		this.totalprice = totalprice;
 	}
 
-	public Product(int id, String name, String date) {
+	public String getFornec() {
+		return this.fornec;
+	}
+
+	public void setFornec(String fornec) {
+		this.fornec = fornec;
+	}
+
+	public String getFornecDate() {
+		return this.fornecDate;
+	}
+
+	public void setFornecDate(String fornecDate) {
+		this.fornecDate = fornecDate;
+	}
+
+	public double getTotalprice() {
+		return this.totalprice;
+	}
+
+	public void setTotalprice(double totalprice) {
+		this.totalprice = totalprice;
+	}
+
+	public int getId() {
+		return this.id;
+	}
+
+	public void setId(int id) {
 		this.id = id;
-		this.name = name;
-		this.date = date;
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(String name) {
@@ -41,7 +72,7 @@ public class Product {
 	}
 
 	public String getType() {
-		return type;
+		return this.type;
 	}
 
 	public void setType(String type) {
@@ -49,7 +80,7 @@ public class Product {
 	}
 
 	public String getDate() {
-		return date;
+		return this.date;
 	}
 
 	public void setDate(String date) {
@@ -57,23 +88,23 @@ public class Product {
 	}
 
 	public double getPrice() {
-		return price;
+		return this.price;
 	}
 
 	public void setPrice(double price) {
 		this.price = price;
 	}
 
-	public int getQuantidade() {
-		return quantidade;
+	public int getQtd() {
+		return this.quantidade;
 	}
 
-	public void setQuantidade(int quantidade) {
+	public void setQtd(int quantidade) {
 		this.quantidade = quantidade;
 	}
 
 	public int getID() {
-		return id;
+		return this.id;
 	}
 
 	public void setID(int id) {
@@ -85,7 +116,7 @@ public class Product {
 	}
 
 	public int getLote() {
-		return lote;
+		return this.lote;
 	}
 
 	public void setTotalPrice(double totalprice) {
@@ -93,7 +124,7 @@ public class Product {
 	}
 
 	public double getTotalPrice() {
-		return totalprice;
+		return this.totalprice;
 	}
 
 }

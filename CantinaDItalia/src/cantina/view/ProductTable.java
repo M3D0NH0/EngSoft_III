@@ -1,5 +1,6 @@
 package cantina.view;
 
+import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JPanel;
@@ -25,6 +26,7 @@ public class ProductTable extends JPanel {
 		tabela.setPreferredScrollableViewportSize(new Dimension(780, 575));
 		tabela.setFillsViewportHeight(true);
 		tabela.setSize(400, 250);
+		tabela.setBackground(Color.white);
 		JScrollPane scrollPane = new JScrollPane(tabela);
 		add(scrollPane);
 	}
