@@ -1,8 +1,11 @@
 
 
--- Refatora��o do ProductFake com Product
-
 -- Ordena��o por data de Validade de 30 dias
+String string = "004-034556";
+String[] parts = string.split("-");
+String part1 = parts[0]; // 004
+String part2 = parts[1]; // 034556
+
 
 -- Reescrever historia entrada/saida e estado
 

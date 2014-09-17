@@ -44,7 +44,8 @@ update produtos set precototal=quantidade*preco where id=6;
 
 drop table produtos;
 
-
+select * from produtos
+select validade from produtos where validade like '%2014/10%'
 /**
  * 
  * @author HSG, M3D0NH0

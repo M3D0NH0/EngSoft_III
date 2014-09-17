@@ -1,10 +1,8 @@
 package cantina.view;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.Closeable;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -22,8 +20,9 @@ public class ProductBusca extends JPanel {
 	private JTextField textFieldBusca;
 	private JLabel lblBuscaProduto;
 	private JButton btnLimpar;
+	private JButton btnBuscarMes;
 	private JButton btnBuscar;
-	private String data;
+	private String data, mes;
 
 	public ProductBusca() {
 		iniciaComponentes();
@@ -31,26 +30,32 @@ public class ProductBusca extends JPanel {
 	}
 
 	private void iniciaComponentes() {
-		lblBuscaProduto = new JLabel("Data de validade:");
+		lblBuscaProduto = new JLabel("Dia ou Ano/Mês");
 		textFieldBusca = new JTextField();
 		btnLimpar = new JButton("Limpar");
-		btnBuscar = new JButton("Buscar");
+		btnBuscar = new JButton("Buscar por data");
+		btnBuscarMes = new JButton("Buscar por mês");
 	}
 
 	private void addComponentes() {
 		setLayout(null);
-		lblBuscaProduto.setBounds(26, 77, 110, 37);
+		lblBuscaProduto.setBounds(26, 77, 208, 23);
 		add(lblBuscaProduto);
 		lblBuscaProduto.setForeground(Color.WHITE);
-		
-		
-		textFieldBusca.setBounds(26, 113, 110, 20);
+
+		textFieldBusca.setBounds(26, 113, 208, 23);
 		add(textFieldBusca);
 		textFieldBusca.setColumns(10);
-		
-		btnLimpar.setBounds(28, 154, 108, 23);
+
+		btnLimpar.setBounds(28, 154, 208, 23);
 		add(btnLimpar);
 		btnLimpar.setBackground(Color.WHITE);
+
+		btnBuscarMes.setBackground(Color.WHITE);
+		btnBuscarMes.setBounds(28, 208, 208, 23);
+		add(btnBuscarMes);
+		btnBuscarMes.setBackground(Color.WHITE);
+
 		btnLimpar.addActionListener(new ActionListener() {
 
 			@Override
@@ -69,20 +74,42 @@ public class ProductBusca extends JPanel {
 							|| textFieldBusca.getText().equals("")) {
 						JOptionPane.showMessageDialog(null, "Data inválida");
 					} else {
-					data = textFieldBusca.getText();
-					ProductTable produtosRela = new ProductTable(data);
-					ProductView.splitPane.setRightComponent(produtosRela);
-					produtosRela.setBackground(Color.GRAY);
-					ProductView.splitPane.setDividerLocation(200);
-					ProductView.splitPane.setEnabled(false);
-					textFieldBusca.setText(null);
-					JOptionPane.showMessageDialog(null, "Busca realizada");
+						data = textFieldBusca.getText();
+						ProductTableDia produtosRela = new ProductTableDia(data);
+						ProductView.splitPane.setRightComponent(produtosRela);
+						produtosRela.setBackground(Color.GRAY);
+						ProductView.splitPane.setDividerLocation(250);
+						ProductView.splitPane.setEnabled(false);
+						textFieldBusca.setText(null);
+						JOptionPane.showMessageDialog(null, "Busca realizada");
 					}
 				}
 			}
 		});
-		btnBuscar.setBounds(28, 181, 108, 23);
-		add(btnBuscar);
-	}
 
+		btnBuscarMes.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+
+				if (arg0.getSource().equals(btnBuscarMes)) {
+					if (textFieldBusca.getText() == null
+							|| textFieldBusca.getText().equals("")) {
+						JOptionPane.showMessageDialog(null, "Data inválida");
+					} else {
+						mes = textFieldBusca.getText();
+						ProductTableMes produtosRela = new ProductTableMes(mes);
+						ProductView.splitPane.setRightComponent(produtosRela);
+						produtosRela.setBackground(Color.GRAY);
+						ProductView.splitPane.setDividerLocation(250);
+						ProductView.splitPane.setEnabled(false);
+						textFieldBusca.setText(null);
+						JOptionPane.showMessageDialog(null, "Busca realizada");
+					}
+				}
+			}
+		});
+		btnBuscar.setBounds(28, 181, 208, 23);
+		add(btnBuscar);
+
+	}
 }

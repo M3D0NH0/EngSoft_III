@@ -7,7 +7,7 @@ package cantina.model;
  */
 public class Product {
 
-	private String name, type, date, fornec, fornecDate;
+	private String name, type, date, fornec, fornecDate,mes;
 	private double price, totalprice;
 	private int id, quantidade, lote;
 
@@ -30,6 +30,15 @@ public class Product {
 		this.lote = lote;
 		this.totalprice = totalprice;
 	}
+	
+	public String getMes() {
+		return this.mes;
+	}
+
+	public void setMes(String mes) {
+		this.mes = mes;
+	}
+
 
 	public String getFornec() {
 		return this.fornec;
