@@ -1,5 +1,6 @@
 package cantina.view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -17,6 +18,10 @@ import cantina.model.ProductModel;
 public class ProductTable extends JPanel {
 	
 	private JTable tabela;
+	
+	public ProductTable(){
+		setLayout(new BorderLayout());
+	}
 	
 	public void productTableDia(String data) {
 
