@@ -20,7 +20,7 @@ public class ProductBusca extends JPanel {
 	private JTextField textFieldBusca;
 	private JLabel lblBuscaProduto;
 	private JButton btnLimpar;
-	private JButton btnBuscarMes;
+	private JButton btnBuscarAnoMes;
 	private JButton btnBuscar;
 	private String data, mes;
 
@@ -34,7 +34,7 @@ public class ProductBusca extends JPanel {
 		textFieldBusca = new JTextField();
 		btnLimpar = new JButton("Limpar");
 		btnBuscar = new JButton("Buscar por data");
-		btnBuscarMes = new JButton("Buscar por mês");
+		btnBuscarAnoMes = new JButton("Buscar por Ano/Mês");
 	}
 
 	private void addComponentes() {
@@ -51,10 +51,10 @@ public class ProductBusca extends JPanel {
 		add(btnLimpar);
 		btnLimpar.setBackground(Color.WHITE);
 
-		btnBuscarMes.setBackground(Color.WHITE);
-		btnBuscarMes.setBounds(28, 208, 208, 23);
-		add(btnBuscarMes);
-		btnBuscarMes.setBackground(Color.WHITE);
+		btnBuscarAnoMes.setBackground(Color.WHITE);
+		btnBuscarAnoMes.setBounds(28, 208, 208, 23);
+		add(btnBuscarAnoMes);
+		btnBuscarAnoMes.setBackground(Color.WHITE);
 
 		btnLimpar.addActionListener(new ActionListener() {
 
@@ -75,7 +75,8 @@ public class ProductBusca extends JPanel {
 						JOptionPane.showMessageDialog(null, "Data inválida");
 					} else {
 						data = textFieldBusca.getText();
-						ProductTableDia produtosRela = new ProductTableDia(data);
+						ProductTable produtosRela = new ProductTable();
+						produtosRela.productTableDia(data);
 						ProductView.splitPane.setRightComponent(produtosRela);
 						produtosRela.setBackground(Color.GRAY);
 						ProductView.splitPane.setDividerLocation(250);
@@ -87,17 +88,18 @@ public class ProductBusca extends JPanel {
 			}
 		});
 
-		btnBuscarMes.addActionListener(new ActionListener() {
+		btnBuscarAnoMes.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 
-				if (arg0.getSource().equals(btnBuscarMes)) {
+				if (arg0.getSource().equals(btnBuscarAnoMes)) {
 					if (textFieldBusca.getText() == null
 							|| textFieldBusca.getText().equals("")) {
 						JOptionPane.showMessageDialog(null, "Data inválida");
 					} else {
 						mes = textFieldBusca.getText();
-						ProductTableMes produtosRela = new ProductTableMes(mes);
+						ProductTable produtosRela = new ProductTable();
+						produtosRela.productTableMes(mes);
 						ProductView.splitPane.setRightComponent(produtosRela);
 						produtosRela.setBackground(Color.GRAY);
 						ProductView.splitPane.setDividerLocation(250);

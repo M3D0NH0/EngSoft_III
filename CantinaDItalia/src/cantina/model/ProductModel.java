@@ -1,28 +1,39 @@
 package cantina.model;
 
-
 import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
 import cantina.db.ProductDAODB;
-import cantina.model.Product;
 
-public class ProductModelMes extends AbstractTableModel {
+/**
+ * 
+ * @author HSG, M3D0NH0
+ *
+ */
+public class ProductModel extends AbstractTableModel {
 
 	private String header[];
 	private List<Product> produtos = new ArrayList<Product>();
 	private ProductDAODB dao = new ProductDAODB();
 
-	public ProductModelMes(String[] header, String mes) {
-		this.header = header;
-		this.produtos = dao.getProdutosMes(mes);
-	}
+	public ProductModel() {}
 
-	public ProductModelMes(String[] header, List<Product> produtos) {
+	public ProductModel(String[] header, List<Product> produtos) {
 		this.header = header;
 		this.produtos = produtos;
+	}
+	
+	public void productModelDia(String[] header, String data) {
+		this.header = header;
+		this.produtos = dao.getProdutosDia(data);
+	}
+	
+	public void productModelMes(String[] header, String mes) {
+		this.header = header;
+		this.produtos = dao.getProdutosMes(mes);
 	}
 
 	@Override
