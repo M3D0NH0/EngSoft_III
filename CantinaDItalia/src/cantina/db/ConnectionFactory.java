@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 	public final static String BANCO = "cantinaditalia";
 	public final static String USER = "postgres";
-	public final static String SENHA = "senacrs";
+	public final static String SENHA = "1234567";
 
 	public static Connection getConexaoPostgres()
 			throws ClassNotFoundException, SQLException {
