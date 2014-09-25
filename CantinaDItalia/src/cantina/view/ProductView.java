@@ -35,6 +35,7 @@ public class ProductView extends JFrame {
 	private JMenuItem mntmHome;
 	private JMenuItem mntmBuscaValidade;
 	private JMenuItem mntmSair;
+	private JMenuItem mntmCadastro;
 
 	public void init() {
 		iniciaComponentes();
@@ -59,9 +60,11 @@ public class ProductView extends JFrame {
 		mntmHome = new JMenuItem("Home");
 		mntmSair = new JMenuItem("Sair");
 		mntmBuscaValidade = new JMenuItem("Busca por Validade");
+		mntmCadastro = new JMenuItem("Cadastrar Produtos");
 		produtosBusca = new ProductBusca();
 		mnMenu.add(mntmHome);
 		mnMenu.add(mntmBuscaValidade);
+		mnMenu.add(mntmCadastro);
 		mnMenu.add(mntmSair);
 		getContentPane().add(new JLabel(new ImageIcon("img/cantinaditalia.jpg")));
 		setLocationRelativeTo(null);
@@ -73,6 +76,7 @@ public class ProductView extends JFrame {
 	private void addAction() {
 		mntmHome.addActionListener(new Tratador());
 		mntmBuscaValidade.addActionListener(new Tratador());
+		mntmCadastro.addActionListener(new Tratador());
 		mntmSair.addActionListener(new Tratador());
 	}
 	
@@ -83,6 +87,10 @@ public class ProductView extends JFrame {
 
 			mntmBuscaValidade.setMnemonic(KeyEvent.VK_B);
 			mntmBuscaValidade.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B,
+					ActionEvent.CTRL_MASK));
+			
+			mntmCadastro.setMnemonic(KeyEvent.VK_C);
+			mntmCadastro.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
 					ActionEvent.CTRL_MASK));
 
 			mntmSair.setMnemonic(KeyEvent.VK_W);
@@ -118,6 +126,11 @@ public class ProductView extends JFrame {
 				getContentPane().setBackground(Color.GRAY);
 				setVisible(false);
 				setVisible(true);
+			} else if(e.getSource() == mntmCadastro){
+				
+				
+				
+				
 			}
 		}
 	}
