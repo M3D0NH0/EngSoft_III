@@ -16,4 +16,6 @@ public interface ProductDAO {
 	public List<Product> getProdutosMes(String mes);
 
 	public List<Product> getTodosProdutos();
+	
+	public Product insereProdutos(Product produto);
 }

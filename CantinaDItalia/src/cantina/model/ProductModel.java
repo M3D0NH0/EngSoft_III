@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
-import cantina.db.ProductDAODB;
+import cantina.db.ProductDAOBD;
 
 /**
  * 
@@ -17,7 +17,7 @@ public class ProductModel extends AbstractTableModel {
 
 	private String header[];
 	private List<Product> produtos = new ArrayList<Product>();
-	private ProductDAODB dao = new ProductDAODB();
+	private ProductDAOBD dao = new ProductDAOBD();
 
 	public ProductModel() {}
 
