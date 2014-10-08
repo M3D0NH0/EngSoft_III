@@ -30,6 +30,7 @@ public class ProductView extends JFrame {
 	private ProductView home;
 	protected static JSplitPane splitPane;
 	private ProductBusca produtosBusca;
+	private ProductInsert produtosInserir;
 	private JMenuBar menuBar;
 	private JMenu mnMenu;
 	private JMenuItem mntmHome;
@@ -62,6 +63,7 @@ public class ProductView extends JFrame {
 		mntmBuscaValidade = new JMenuItem("Busca por Validade");
 		mntmCadastro = new JMenuItem("Cadastrar Produtos");
 		produtosBusca = new ProductBusca();
+		produtosInserir = new ProductInsert();
 		mnMenu.add(mntmHome);
 		mnMenu.add(mntmBuscaValidade);
 		mnMenu.add(mntmCadastro);
@@ -127,9 +129,18 @@ public class ProductView extends JFrame {
 				setVisible(false);
 				setVisible(true);
 			} else if(e.getSource() == mntmCadastro){
-				
-				
-				
+				getContentPane().removeAll();
+				setJMenuBar(menuBar);
+				getContentPane().add(splitPane, new BorderLayout().CENTER);
+				splitPane.setLeftComponent(produtosInserir);
+				splitPane.setRightComponent(new JLabel(new ImageIcon("img/cantinaditalia.jpg")));
+				setLocationRelativeTo(null);
+				splitPane.setDividerLocation(250);
+				splitPane.setBackground(Color.GRAY);
+				splitPane.setEnabled(false);
+				produtosBusca.setBackground(Color.GRAY);
+				setVisible(false);
+				setVisible(true);
 				
 			}
 		}
