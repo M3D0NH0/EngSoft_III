@@ -97,7 +97,7 @@ public class ProductDAOBD extends Connect implements ProductDAO {
 			comando.setString(3, produto.getDate());
 			comando.setInt(4, produto.getQtd());
 			comando.setDouble(5, produto.getPrice());
-			comando.executeQuery();
+			comando.execute();
 			return produto;
 			
 		} catch (ClassNotFoundException | SQLException ex) {
