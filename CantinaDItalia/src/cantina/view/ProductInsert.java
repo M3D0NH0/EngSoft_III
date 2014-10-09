@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import cantina.db.ProductDAOBD;
 import cantina.model.Product;
 
 /**
@@ -36,67 +37,65 @@ public class ProductInsert extends JPanel{
 		tx_quantidade = new JTextField();
 		tx_preco = new JTextField();
 		
-		lb_nome = new JLabel("Nome : ");
-		lb_tipo = new JLabel("Tipo : ");
-		lb_validade = new JLabel("Validade : ");
-		lb_quantidade = new JLabel("Quantidade : ");
-		lb_preco = new JLabel("Preço : ");
+		lb_nome = new JLabel("Nome");
+		lb_tipo = new JLabel("Tipo");
+		lb_validade = new JLabel("Validade");
+		lb_quantidade = new JLabel("Quantidade");
+		lb_preco = new JLabel("Preço");
 		
 		bt_adicionar = new JButton("Adicionar");
 		bt_limpar = new JButton("Limpar");
+		
+		
+		
 	}
 	
 	public void addComponetes(){
 		setLayout(null);
 		
-		lb_nome.setBounds(26, 77, 208, 23);
+		lb_nome.setBounds(40, 50, 208, 20);
 		add(lb_nome);
 		lb_nome.setForeground(Color.WHITE);
 		
-		tx_nome.setBounds(30, 77, 208, 23);
+		tx_nome.setBounds(40, 70, 180, 20);
 		add(tx_nome);
-		tx_nome.setForeground(Color.WHITE);
 		
-		lb_tipo.setBounds(30, 77, 208, 23);
+		lb_tipo.setBounds(40, 100, 208, 20);
 		add(lb_tipo);
 		lb_tipo.setForeground(Color.WHITE);
 		
-		tx_tipo.setBounds(30, 77, 208, 23);
+		tx_tipo.setBounds(40, 120, 180, 20);
 		add(tx_tipo);
-		tx_tipo.setForeground(Color.WHITE);
 		
-		lb_validade.setBounds(30, 77, 208, 23);
+		lb_validade.setBounds(40, 150, 208, 20);
 		add(lb_validade);
 		lb_validade.setForeground(Color.WHITE);
 		
-		tx_validade.setBounds(30, 77, 208, 23);
+		tx_validade.setBounds(40, 170, 180, 20);
 		add(tx_validade);
-		tx_validade.setForeground(Color.WHITE);
 		
-		lb_quantidade.setBounds(30, 77, 208, 23);
+		lb_quantidade.setBounds(40, 200, 208, 20);
 		add(lb_quantidade);
 		lb_quantidade.setForeground(Color.WHITE);
 		
-		tx_quantidade.setBounds(30, 77, 208, 23);
+		tx_quantidade.setBounds(40, 220, 180, 20);
 		add(tx_quantidade);
-		tx_quantidade.setForeground(Color.WHITE);
 		
-		lb_preco.setBounds(30, 77, 208, 23);
+		lb_preco.setBounds(40, 250, 208, 20);
 		add(lb_preco);
 		lb_preco.setForeground(Color.WHITE);
 		
-		tx_preco.setBounds(30, 77, 208, 23);
+		tx_preco.setBounds(40, 270, 180, 20);
 		add(tx_preco);
-		tx_preco.setForeground(Color.WHITE);
 		
-		bt_adicionar.setBounds(30, 77, 208, 23);
+		bt_adicionar.setBounds(40, 310, 180, 20);
 		add(bt_adicionar);
-		bt_adicionar.setForeground(Color.WHITE);
+		bt_adicionar.setBackground(Color.WHITE);
 		bt_adicionar.addActionListener(new tratadorBotoes());
 		
-		bt_limpar.setBounds(30, 77, 208, 23);
+		bt_limpar.setBounds(40, 350, 180, 20);
 		add(bt_limpar);
-		bt_limpar.setForeground(Color.WHITE);
+		bt_limpar.setBackground(Color.WHITE);
 		bt_limpar.addActionListener(new tratadorBotoes());
 		
 	}
@@ -107,7 +106,14 @@ public class ProductInsert extends JPanel{
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource().equals(bt_adicionar)){
 				Product produto = new Product();
-				produto.
+				produto.setName(tx_nome.getText());
+				produto.setType(tx_tipo.getText());
+				produto.setDate(tx_validade.getText());
+				produto.setQtd(Integer.parseInt(tx_quantidade.getText()));
+				produto.setPrice(Double.parseDouble(tx_preco.getText()));
+				
+				ProductDAOBD produtoCadastro = new ProductDAOBD();
+				produtoCadastro.insereProdutos(produto);
 				
 			}else if(e.getSource().equals(bt_limpar)){
 				tx_nome.setText(null);
@@ -115,8 +121,6 @@ public class ProductInsert extends JPanel{
 				tx_quantidade.setText(null);
 				tx_validade.setText(null);
 				tx_preco.setText(null);
-			}else{
-				
 			}
 		}
 	}

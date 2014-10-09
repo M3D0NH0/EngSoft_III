@@ -1,0 +1,7 @@
+1. Desenvolvimento de User Tests baseados nas User Story => 1 semana
+2. Protótipo inicial do sistema	=> 3 dias
+3. Arquitetura JAVA confirmada => 1 dia
+4. Cadastro de produtos com validade(inserido pelo sgdb) => 1 dia
+5. Busca de produtos por data específica => 2 dias
+6. Busca de produtos por mês/ano => 1 dia
+7. Inserção de produtos => 2 dias

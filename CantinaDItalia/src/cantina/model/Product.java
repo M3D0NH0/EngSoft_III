@@ -31,6 +31,14 @@ public class Product {
 		this.totalprice = totalprice;
 	}
 	
+	public Product(String name, String type, String date, int quantidade, double price){
+		this.name = name;
+		this.type = type;
+		this.date = date;
+		this.quantidade = quantidade;
+		this.price = price;
+	}
+	
 	public String getMes() {
 		return this.mes;
 	}

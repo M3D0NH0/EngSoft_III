@@ -99,7 +99,7 @@ public class ProductDAOBD extends Connect implements ProductDAO {
 			comando.setDouble(5, produto.getPrice());
 			comando.executeQuery();
 			return produto;
-
+			
 		} catch (ClassNotFoundException | SQLException ex) {
 			Logger.getLogger(ProductDAOBD.class.getName()).log(Level.SEVERE,
 					null, ex);
