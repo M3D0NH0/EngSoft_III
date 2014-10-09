@@ -1,7 +1,0 @@
-
--- Reescrever historia entrada/saida e estado
-
--- Apresenta��o Melhor com ordem de cria��o do projeto
-
--- Melhorar Dic��o da Apresenta��o
-
