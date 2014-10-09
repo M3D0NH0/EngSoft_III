@@ -111,6 +111,7 @@ public class ProductView extends JFrame {
 				getContentPane().add(splitPane, new BorderLayout().CENTER);
 				splitPane.setLeftComponent(produtosBusca);
 				splitPane.setRightComponent(new JLabel(new ImageIcon("img/cantinaditalia.jpg")));
+				getClass().getResource("img/cantinaditalia.jpg");
 				setLocationRelativeTo(null);
 				splitPane.setDividerLocation(250);
 				splitPane.setBackground(Color.GRAY);

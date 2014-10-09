@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -114,6 +115,8 @@ public class ProductInsert extends JPanel{
 				
 				ProductDAOBD produtoCadastro = new ProductDAOBD();
 				produtoCadastro.insereProdutos(produto);
+				JOptionPane.showMessageDialog(null, "Produto inserido");
+
 				
 			}else if(e.getSource().equals(bt_limpar)){
 				tx_nome.setText(null);
