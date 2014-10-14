@@ -1,7 +1,0 @@
-1. Desenvolvimento de User Tests baseados nas User Story => 
-2. Prot�tipo inicial do sistema	=>
-3. Arquitetura JAVA confirmada => 
-4. Cadastro de produtos com validade(inserido pelo sgbd) => 
-5. Busca de produtos por data espec�fica => 
-6. Busca de produtos por m�s/ano => 
-7. Inser��o de produtos => 
