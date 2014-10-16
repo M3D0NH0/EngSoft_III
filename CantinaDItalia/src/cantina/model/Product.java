@@ -12,32 +12,21 @@ public class Product {
 	private int id, quantidade, lote;
 
 	public Product() {}
-
-	public Product(int id, String name, String date) {
-		this.id = id;
-		this.name = name;
-		this.date = date;
-	}
 	
 	public Product(int id, String name, String type, String date, double price,
-			int quantidade, int lote, double totalprice) {
+			int quantidade) {
 		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.date = date;
 		this.price = price;
 		this.quantidade = quantidade;
-		this.lote = lote;
-		this.totalprice = totalprice;
 	}
 	
-	public Product(String name, String type, String date, int quantidade, double price){
-		this.name = name;
-		this.type = type;
-		this.date = date;
-		this.quantidade = quantidade;
-		this.price = price;
+	public Product(double totalPrice){
+		this.totalprice = totalPrice;
 	}
+	
 	
 	public String getMes() {
 		return this.mes;

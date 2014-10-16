@@ -25,7 +25,7 @@ public class ProductTable extends JPanel {
 		
 	public void productTableData(String data) {
 
-		String[] colunas = { "Código", "Nome", "Validade" };
+		String[] colunas = { "Código", "Nome", "Tipo", "Validade", "Quantidade", "Preço", "Preço Total"};
 
 		ProductModel modelo = new ProductModel();
 		modelo.productModelData(colunas, data);
