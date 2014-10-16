@@ -30,7 +30,7 @@ public class ProductBusca extends JPanel {
 	}
 
 	private void iniciaComponentes() {
-		lblBuscaProduto = new JLabel("Buscar Produto por nome ou validade");
+		lblBuscaProduto = new JLabel("Buscar por nome ou validade");
 		textFieldBusca = new JTextField();
 		btnBuscarNome = new JButton("Buscar por Nome");
 		btnLimpar = new JButton("Limpar");

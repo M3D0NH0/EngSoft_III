@@ -48,6 +48,36 @@ public class ProductDAOBD extends Connect implements ProductDAO {
 		return (listaProduct);
 	}
 
+	@Override
+	public List<Product> getProdutosDataMes(String mes) {
+	
+
+		List<Product> listaProduct = new ArrayList<>();
+		try {
+
+			iniciaConexao("SELECT * FROM PRODUTOS WHERE VALIDADE LIKE ?");
+			comando.setString(1 , ("%"+mes+"%") );
+			ResultSet resultado = comando.executeQuery();
+			while (resultado.next()) {
+				Product product = new Product(resultado.getInt("id"),
+						resultado.getString("nome"),
+						resultado.getString("tipo"),
+						resultado.getString("validade"),
+						resultado.getDouble("preco"),
+						resultado.getInt("quantidade"));				
+				double mult = resultado.getDouble("preco") * resultado.getInt("quantidade");
+						product.setTotalprice(mult);
+				
+				listaProduct.add(product);
+			} 
+			fecharConexao();
+		} catch (ClassNotFoundException | SQLException ex) {
+			Logger.getLogger(ProductDAOBD.class.getName()).log(Level.SEVERE,
+					null, ex);
+		}
+		return (listaProduct);
+	}
+
 
 	@Override
 	public List<Product> getProdutosNome(String nome) {
