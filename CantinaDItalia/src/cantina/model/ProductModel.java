@@ -30,6 +30,11 @@ public class ProductModel extends AbstractTableModel {
 		this.header = header;
 		this.produtos = dao.getProdutosData(data);
 	}
+	
+	public void productModelNome(String[] header, String nome) {
+		this.header = header;
+		this.produtos = dao.getProdutosNome(nome);
+	}
 
 	@Override
 	public int getRowCount() {
