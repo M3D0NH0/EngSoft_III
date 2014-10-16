@@ -10,7 +10,7 @@ import java.sql.SQLException;
  *
  */
 public class ConnectionFactory {
-	public final static String BANCO = "cantinaditalia";
+	public final static String BANCO ="produtos";
 	public final static String USER = "root";
 	public final static String SENHA = "";
 
