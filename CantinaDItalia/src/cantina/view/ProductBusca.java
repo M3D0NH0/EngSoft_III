@@ -20,9 +20,8 @@ public class ProductBusca extends JPanel {
 	private JTextField textFieldBusca;
 	private JLabel lblBuscaProduto;
 	private JButton btnLimpar;
-	private JButton btnBuscarAnoMes;
-	private JButton btnBuscar;
-	private String data, mes;
+	private JButton btnBuscarData;
+	private String data;
 
 	public ProductBusca() {
 		iniciaComponentes();
@@ -30,11 +29,10 @@ public class ProductBusca extends JPanel {
 	}
 
 	private void iniciaComponentes() {
-		lblBuscaProduto = new JLabel("Dia ou Ano/Mês");
+		lblBuscaProduto = new JLabel("Data");
 		textFieldBusca = new JTextField();
 		btnLimpar = new JButton("Limpar");
-		btnBuscar = new JButton("Buscar por data");
-		btnBuscarAnoMes = new JButton("Buscar por Ano/Mês");
+		btnBuscarData = new JButton("Buscar por Data");
 	}
 
 	private void addComponentes() {
@@ -51,10 +49,10 @@ public class ProductBusca extends JPanel {
 		add(btnLimpar);
 		btnLimpar.setBackground(Color.WHITE);
 
-		btnBuscarAnoMes.setBackground(Color.WHITE);
-		btnBuscarAnoMes.setBounds(28, 208, 208, 23);
-		add(btnBuscarAnoMes);
-		btnBuscarAnoMes.setBackground(Color.WHITE);
+		btnBuscarData.setBackground(Color.WHITE);
+		btnBuscarData.setBounds(28, 208, 208, 23);
+		add(btnBuscarData);
+		btnBuscarData.setBackground(Color.WHITE);
 
 		btnLimpar.addActionListener(new ActionListener() {
 
@@ -64,19 +62,19 @@ public class ProductBusca extends JPanel {
 			}
 		});
 
-		btnBuscar.setBackground(Color.WHITE);
-		btnBuscar.addActionListener(new ActionListener() {
-
+		
+		btnBuscarData.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if (arg0.getSource().equals(btnBuscar)) {
+
+				if (arg0.getSource().equals(btnBuscarData)) {
 					if (textFieldBusca.getText() == null
 							|| textFieldBusca.getText().equals("")) {
 						JOptionPane.showMessageDialog(null, "Data inválida");
 					} else {
 						data = textFieldBusca.getText();
 						ProductTable produtosRela = new ProductTable();
-						produtosRela.productTableDia(data);
+						produtosRela.productTableData(data);
 						ProductView.splitPane.setRightComponent(produtosRela);
 						produtosRela.setBackground(Color.GRAY);
 						ProductView.splitPane.setDividerLocation(250);
@@ -87,31 +85,6 @@ public class ProductBusca extends JPanel {
 				}
 			}
 		});
-
-		btnBuscarAnoMes.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-
-				if (arg0.getSource().equals(btnBuscarAnoMes)) {
-					if (textFieldBusca.getText() == null
-							|| textFieldBusca.getText().equals("")) {
-						JOptionPane.showMessageDialog(null, "Data inválida");
-					} else {
-						mes = textFieldBusca.getText();
-						ProductTable produtosRela = new ProductTable();
-						produtosRela.productTableMes(mes);
-						ProductView.splitPane.setRightComponent(produtosRela);
-						produtosRela.setBackground(Color.GRAY);
-						ProductView.splitPane.setDividerLocation(250);
-						ProductView.splitPane.setEnabled(false);
-						textFieldBusca.setText(null);
-						JOptionPane.showMessageDialog(null, "Busca realizada");
-					}
-				}
-			}
-		});
-		btnBuscar.setBounds(28, 181, 208, 23);
-		add(btnBuscar);
-
+		
 	}
 }

@@ -22,28 +22,13 @@ public class ProductTable extends JPanel {
 	public ProductTable(){
 		setLayout(new BorderLayout());
 	}
-	
-	public void productTableDia(String data) {
+		
+	public void productTableData(String data) {
 
 		String[] colunas = { "Código", "Nome", "Validade" };
 
 		ProductModel modelo = new ProductModel();
-		modelo.productModelDia(colunas, data);
-		tabela = new JTable(modelo);
-		tabela.setPreferredScrollableViewportSize(new Dimension(680, 575));
-		tabela.setFillsViewportHeight(true);
-		tabela.setSize(400, 250);
-		tabela.setBackground(Color.white);
-		JScrollPane scrollPane = new JScrollPane(tabela);
-		add(scrollPane);
-	}
-	
-	public void productTableMes(String mes) {
-
-		String[] colunas = { "Código", "Nome", "Validade" };
-
-		ProductModel modelo = new ProductModel();
-		modelo.productModelMes(colunas, mes);
+		modelo.productModelData(colunas, data);
 		tabela = new JTable(modelo);
 		tabela.setPreferredScrollableViewportSize(new Dimension(680, 575));
 		tabela.setFillsViewportHeight(true);

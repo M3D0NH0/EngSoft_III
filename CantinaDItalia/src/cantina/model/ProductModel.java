@@ -26,14 +26,9 @@ public class ProductModel extends AbstractTableModel {
 		this.produtos = produtos;
 	}
 	
-	public void productModelDia(String[] header, String data) {
+	public void productModelData(String[] header, String mes) {
 		this.header = header;
-		this.produtos = dao.getProdutosDia(data);
-	}
-	
-	public void productModelMes(String[] header, String mes) {
-		this.header = header;
-		this.produtos = dao.getProdutosMes(mes);
+		this.produtos = dao.getProdutosData(mes);
 	}
 
 	@Override
