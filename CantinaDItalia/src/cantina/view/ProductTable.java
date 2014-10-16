@@ -25,7 +25,7 @@ public class ProductTable extends JPanel {
 		
 	public void productTableData(String data) {
 
-		String[] colunas = { "Nome", "Tipo", "Validade", "Quantidade", "Preço", "Preço Total"};
+		String[] colunas = { "Nome", "Tipo", "Validade", "Quantidade", "Preço R$", "Preço Total R$"};
 
 		ProductModel modelo = new ProductModel();
 		modelo.productModelData(colunas, data);
@@ -42,7 +42,7 @@ public class ProductTable extends JPanel {
 
 	public void productTableNome(String nome) {
 
-		String[] colunas = { "Nome", "Tipo", "Validade", "Quantidade", "Preço", "Preço Total"};
+		String[] colunas = { "Nome", "Tipo", "Validade", "Quantidade", "Preço R$", "Preço Total R$"};
 
 		ProductModel modelo = new ProductModel();
 		modelo.productModelNome(colunas, nome);
@@ -58,7 +58,7 @@ public class ProductTable extends JPanel {
 
 	public void productTableMes(String mes) {
 
-		String[] colunas = { "Nome", "Tipo", "Validade", "Quantidade", "Preço", "Preço Total"};
+		String[] colunas = { "Nome", "Tipo", "Validade", "Quantidade", "Preço R$", "Preço Total R$"};
 
 		ProductModel modelo = new ProductModel();
 		modelo.productModelMes(colunas, mes);
