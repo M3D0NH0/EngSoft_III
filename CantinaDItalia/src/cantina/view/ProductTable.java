@@ -33,9 +33,11 @@ public class ProductTable extends JPanel {
 		tabela.setPreferredScrollableViewportSize(new Dimension(680, 575));
 		tabela.setFillsViewportHeight(true);
 		tabela.setSize(400, 250);
-		tabela.setBackground(Color.white);
+		tabela.setBackground(Color.GRAY);  
+		tabela.setForeground(Color.WHITE); 
 		JScrollPane scrollPane = new JScrollPane(tabela);
 		add(scrollPane);
+		
 	}
 
 	public void productTableNome(String nome) {
@@ -48,7 +50,8 @@ public class ProductTable extends JPanel {
 		tabela.setPreferredScrollableViewportSize(new Dimension(680, 575));
 		tabela.setFillsViewportHeight(true);
 		tabela.setSize(400, 250);
-		tabela.setBackground(Color.white);
+		tabela.setBackground(Color.GRAY);  
+		tabela.setForeground(Color.WHITE); 
 		JScrollPane scrollPane = new JScrollPane(tabela);
 		add(scrollPane);
 	}
@@ -63,7 +66,8 @@ public class ProductTable extends JPanel {
 		tabela.setPreferredScrollableViewportSize(new Dimension(680, 575));
 		tabela.setFillsViewportHeight(true);
 		tabela.setSize(400, 250);
-		tabela.setBackground(Color.white);
+		tabela.setBackground(Color.GRAY);  
+		tabela.setForeground(Color.WHITE); 
 		JScrollPane scrollPane = new JScrollPane(tabela);
 		add(scrollPane);
 	}
