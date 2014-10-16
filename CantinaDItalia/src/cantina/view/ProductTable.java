@@ -25,7 +25,7 @@ public class ProductTable extends JPanel {
 		
 	public void productTableData(String data) {
 
-		String[] colunas = { "Código", "Nome", "Tipo", "Validade", "Quantidade", "Preço", "Preço Total"};
+		String[] colunas = { "Nome", "Tipo", "Validade", "Quantidade", "Preço", "Preço Total"};
 
 		ProductModel modelo = new ProductModel();
 		modelo.productModelData(colunas, data);
@@ -40,10 +40,25 @@ public class ProductTable extends JPanel {
 
 	public void productTableNome(String nome) {
 
-		String[] colunas = { "Código", "Nome", "Tipo", "Validade", "Quantidade", "Preço", "Preço Total"};
+		String[] colunas = { "Nome", "Tipo", "Validade", "Quantidade", "Preço", "Preço Total"};
 
 		ProductModel modelo = new ProductModel();
 		modelo.productModelNome(colunas, nome);
+		tabela = new JTable(modelo);
+		tabela.setPreferredScrollableViewportSize(new Dimension(680, 575));
+		tabela.setFillsViewportHeight(true);
+		tabela.setSize(400, 250);
+		tabela.setBackground(Color.white);
+		JScrollPane scrollPane = new JScrollPane(tabela);
+		add(scrollPane);
+	}
+
+	public void productTableMes(String mes) {
+
+		String[] colunas = { "Nome", "Tipo", "Validade", "Quantidade", "Preço", "Preço Total"};
+
+		ProductModel modelo = new ProductModel();
+		modelo.productModelMes(colunas, mes);
 		tabela = new JTable(modelo);
 		tabela.setPreferredScrollableViewportSize(new Dimension(680, 575));
 		tabela.setFillsViewportHeight(true);

@@ -27,7 +27,6 @@ public class ProductView extends JFrame {
 	public ProductView() {
 	}
 
-	private ProductView home;
 	protected static JSplitPane splitPane;
 	private ProductBusca produtosBusca;
 	private ProductInsert produtosInserir;
@@ -47,7 +46,6 @@ public class ProductView extends JFrame {
 	}
 
 	private void iniciaComponentes() {
-		home = new ProductView();
 		splitPane = new JSplitPane();
 		splitPane.setBounds(0, 11, 1010, 590);
 		setResizable(false);

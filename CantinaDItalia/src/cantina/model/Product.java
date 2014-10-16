@@ -22,7 +22,7 @@ public class Product {
 		this.price = price;
 		this.quantidade = quantidade;
 	}
-	
+		
 	public Product(double totalPrice){
 		this.totalprice = totalPrice;
 	}

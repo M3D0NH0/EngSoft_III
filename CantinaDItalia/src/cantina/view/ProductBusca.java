@@ -22,7 +22,8 @@ public class ProductBusca extends JPanel {
 	private JButton btnLimpar;
 	private JButton btnBuscarNome;
 	private JButton btnBuscarData;
-	private String data, nome;
+	private JButton btnUltimoMes;
+	private String data, nome, mes;
 
 	public ProductBusca() {
 		iniciaComponentes();
@@ -35,6 +36,7 @@ public class ProductBusca extends JPanel {
 		btnBuscarNome = new JButton("Buscar por Nome");
 		btnLimpar = new JButton("Limpar");
 		btnBuscarData = new JButton("Buscar por Data");
+		btnUltimoMes = new JButton("Mês atual");
 	}
 
 	private void addComponentes() {
@@ -46,6 +48,10 @@ public class ProductBusca extends JPanel {
 		textFieldBusca.setBounds(26, 113, 208, 23);
 		add(textFieldBusca);
 		textFieldBusca.setColumns(10);
+
+		btnUltimoMes.setBounds(26, 44, 208, 23);
+		add(btnUltimoMes);
+		btnUltimoMes.setBackground(Color.WHITE);
 
 		btnLimpar.setBounds(28, 154, 208, 23);
 		add(btnLimpar);
@@ -66,6 +72,25 @@ public class ProductBusca extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				textFieldBusca.setText(null);
+			}
+		});
+
+		btnUltimoMes.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource().equals(btnUltimoMes)) {
+					mes = "10/2014";
+					ProductTable produtosRela = new ProductTable();
+					produtosRela.productTableMes(mes);
+					ProductView.splitPane.setRightComponent(produtosRela);
+					produtosRela.setBackground(Color.GRAY);
+					ProductView.splitPane.setDividerLocation(250);
+					ProductView.splitPane.setEnabled(false);
+					textFieldBusca.setText(null);
+					JOptionPane.showMessageDialog(null, "Busca realizada");
+				}
+
 			}
 		});
 

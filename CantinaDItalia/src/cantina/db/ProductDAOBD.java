@@ -21,7 +21,6 @@ public class ProductDAOBD extends Connect implements ProductDAO {
 	@Override
 	public List<Product> getProdutosData(String data) {
 	
-
 		List<Product> listaProduct = new ArrayList<>();
 		try {
 
@@ -49,14 +48,13 @@ public class ProductDAOBD extends Connect implements ProductDAO {
 	}
 
 	@Override
-	public List<Product> getProdutosDataMes(String mes) {
+	public List<Product> getProdutosMes(String mes) {
 	
-
 		List<Product> listaProduct = new ArrayList<>();
 		try {
 
 			iniciaConexao("SELECT * FROM PRODUTOS WHERE VALIDADE LIKE ?");
-			comando.setString(1 , ("%"+mes+"%") );
+			comando.setString(1,"%"+mes);
 			ResultSet resultado = comando.executeQuery();
 			while (resultado.next()) {
 				Product product = new Product(resultado.getInt("id"),
@@ -75,11 +73,12 @@ public class ProductDAOBD extends Connect implements ProductDAO {
 			Logger.getLogger(ProductDAOBD.class.getName()).log(Level.SEVERE,
 					null, ex);
 		}
+		
 		return (listaProduct);
 	}
 
 
-	@Override
+	@Override  
 	public List<Product> getProdutosNome(String nome) {
 	
 
@@ -127,8 +126,6 @@ public class ProductDAOBD extends Connect implements ProductDAO {
 		}
 		return null;
 	}
-	
 
-	
 
 }

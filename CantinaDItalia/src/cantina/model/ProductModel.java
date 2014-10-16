@@ -28,14 +28,19 @@ public class ProductModel extends AbstractTableModel {
 	
 	public void productModelData(String[] header, String data) {
 		this.header = header;
-		this.produtos = dao.getProdutosData(data);
+		this.produtos = dao.getProdutosData(data);  
 	}
 	
 	public void productModelNome(String[] header, String nome) {
 		this.header = header;
 		this.produtos = dao.getProdutosNome(nome);
 	}
-
+	
+	public void productModelMes(String[] header, String mes) {
+		this.header = header;
+		this.produtos = dao.getProdutosMes(mes);
+	}
+	
 	@Override
 	public int getRowCount() {
 		return (produtos.size());
@@ -43,7 +48,7 @@ public class ProductModel extends AbstractTableModel {
 
 	@Override
 	public int getColumnCount() {
-		return (7);
+		return (6);
 	}
 
 	@Override
@@ -54,19 +59,17 @@ public class ProductModel extends AbstractTableModel {
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		if(columnIndex == 0) {
-			return (produtos.get(rowIndex).getID());
-		} else if(columnIndex == 1) {
 			return (produtos.get(rowIndex).getName());
-		} else if(columnIndex == 2){
+		} else if(columnIndex == 1) {
 			return (produtos.get(rowIndex).getType());
-		} else if(columnIndex == 3){
+		} else if(columnIndex == 2){
 			return (produtos.get(rowIndex).getDate());
-		} else if(columnIndex == 4){
+		} else if(columnIndex == 3){
 			return (produtos.get(rowIndex).getQtd());
-		} else if(columnIndex == 5){
+		} else if(columnIndex == 4){
 			return (produtos.get(rowIndex).getPrice());
 		} else {
-			return (produtos.get(rowIndex).getTotalprice());
+			return (produtos.get(rowIndex).getTotalPrice());
 		}
 	}
 
