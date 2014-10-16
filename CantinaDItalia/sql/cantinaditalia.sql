@@ -1,32 +1,61 @@
-﻿create table produtos(
-id serial not null,
-nome varchar(40) not null,
-tipo varchar(40) not null,
-validade varchar(20) not null,
-quantidade integer not null,
-preco numeric(10,2) not null
-);
+-- phpMyAdmin SQL Dump
+-- version 3.5.2.2
+-- http://www.phpmyadmin.net
+--
+-- Servidor: 127.0.0.1
+-- Tempo de Geração: 
+-- Versão do Servidor: 5.5.27
+-- Versão do PHP: 5.4.7
 
-alter table produtos add constraint pro_pk primary key(id);
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
-insert into produtos(nome,tipo,validade,quantidade,preco) values
-('Pastel','Alimentos','2014/10/09',30, 3.50),
-('Folhado de Frango','Alimentos','2014/10/12',50, 3.50),
-('Pão de Queijo','Alimentos','2014/11/30',60, 3.50),
-('Chocolate','Alimentos','2014/10/08',70, 3.50),
-('Pastel Frito','Alimentos','2014/12/01',30, 3.50),
-('Folhado de Carne','Alimentos','2014/11/30',50, 3.50),
-('Mini Pizza','Alimentos','2014/10/08',70, 3.50),
-('Coca-Cola','Bebidas','2014/10/18',40, 3.50),
-('Água','Bebidas','2015/06/20',300, 2.50),
-('Sprite','Bebidas','2014/12/20',40, 3.50),
-('Chá Gelado','Bebidas','2014/10/30',50, 3.50),
-('Café','Bebidas','2014/10/02',200, 1.75);
 
-select * from produtos
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
-/**
- * 
- * @author HSG, M3D0NH0
- *
- */
+--
+-- Banco de Dados: `cantinaditalia`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produtos`
+--
+
+CREATE TABLE IF NOT EXISTS `produtos` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `tipo` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+  `validade` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  `preco` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `tipo`, `validade`, `quantidade`, `preco`) VALUES
+(1, 'Pastel', 'Alimentos', '09/10/2014', 30, 3.50),
+(2, 'Folhado de Frango', 'Alimentos', '12/10/2014', 50, 3.50),
+(3, 'Pão de Queijo', 'Alimentos', '30/11/2014', 60, 3.50),
+(4, 'Chocolate', 'Alimentos', '08/10/2014', 70, 3.50),
+(5, 'Pastel Frito', 'Alimentos', '01/12/2014', 30, 3.50),
+(6, 'Folhado de Carne', 'Alimentos', '30/11/2014', 50, 3.50),
+(7, 'Mini Pizza', 'Alimentos', '08/10/2014', 70, 3.50),
+(8, 'Coca-Cola', 'Bebidas', '18/10/2014', 40, 3.50),
+(9, 'Água', 'Bebidas', '20/06/2014', 300, 2.50),
+(10, 'Sprite', 'Bebidas', '20/12/2014', 40, 3.50),
+(11, 'Chá Gelado', 'Bebidas', '30/10/2014', 50, 3.50),
+(12, 'Café', 'Bebidas', '02/10/2014', 200, 1.75),
+(13, 'Cheetos', 'Salgado', '10/12/2015', 34, 3.40);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
