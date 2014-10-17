@@ -18,7 +18,10 @@ import javax.swing.JTextField;
 public class ProductBusca extends JPanel {
 
 	private JTextField textFieldBusca;
+	private JLabel lblTitulo;
 	private JLabel lblBuscaProduto;
+	private JLabel lblGuardaBuscaData;
+	private JLabel lblGuardaBuscaNome;
 	private JButton btnLimpar;
 	private JButton btnBuscarNome;
 	private JButton btnBuscarData;
@@ -31,8 +34,11 @@ public class ProductBusca extends JPanel {
 	}
 
 	private void iniciaComponentes() {
-		lblBuscaProduto = new JLabel("Buscar por nome ou validade");
+		lblBuscaProduto = new JLabel("Buscar por nome ou validade:");
 		textFieldBusca = new JTextField();
+		lblTitulo = new JLabel("BUSCA DE PRODUTOS DO ESTOQUE");
+		lblGuardaBuscaData = new JLabel();
+		lblGuardaBuscaNome = new JLabel();
 		btnBuscarNome = new JButton("Buscar por Nome");
 		btnLimpar = new JButton("Limpar");
 		btnBuscarData = new JButton("Buscar por Data");
@@ -41,10 +47,23 @@ public class ProductBusca extends JPanel {
 
 	private void addComponentes() {
 		setLayout(null);
+		
 		lblBuscaProduto.setBounds(26, 77, 208, 23);
 		add(lblBuscaProduto);
 		lblBuscaProduto.setForeground(Color.WHITE);
 
+		lblTitulo.setBounds(26, 7, 208, 23);
+		add(lblTitulo);
+		lblTitulo.setForeground(Color.WHITE);
+	
+		lblGuardaBuscaNome.setBounds(26, 230, 208, 23);
+		add(lblGuardaBuscaNome);
+		lblGuardaBuscaNome.setForeground(Color.WHITE);
+		
+		lblGuardaBuscaData.setBounds(26, 250, 208, 23);
+		add(lblGuardaBuscaData);
+		lblGuardaBuscaData.setForeground(Color.WHITE);
+		
 		textFieldBusca.setBounds(26, 113, 208, 23);
 		add(textFieldBusca);
 		textFieldBusca.setColumns(10);
@@ -99,11 +118,12 @@ public class ProductBusca extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource().equals(btnBuscarNome)) {
-					if (textFieldBusca.getText() == null
-							|| textFieldBusca.getText().equals("")) {
+					if ((textFieldBusca.getText() == null
+							|| textFieldBusca.getText().equals(""))) {
 						JOptionPane.showMessageDialog(null, "Nome inválido");
 					} else {
 						nome = textFieldBusca.getText();
+						lblGuardaBuscaNome.setText("Último nome pesquisado: "+nome);
 						ProductTable produtosRela = new ProductTable();
 						produtosRela.productTableNome(nome);
 						ProductView.splitPane.setRightComponent(produtosRela);
@@ -128,6 +148,7 @@ public class ProductBusca extends JPanel {
 						JOptionPane.showMessageDialog(null, "Data inválida");
 					} else {
 						data = textFieldBusca.getText();
+						lblGuardaBuscaData.setText("Última data pesquisada: "+data);
 						ProductTable produtosRela = new ProductTable();
 						produtosRela.productTableData(data);
 						ProductView.splitPane.setRightComponent(produtosRela);
