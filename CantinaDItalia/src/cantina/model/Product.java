@@ -27,7 +27,6 @@ public class Product {
 		this.totalprice = totalPrice;
 	}
 	
-	
 	public String getMes() {
 		return this.mes;
 	}

@@ -67,9 +67,9 @@ public class ProductModel extends AbstractTableModel {
 		} else if(columnIndex == 3){
 			return (produtos.get(rowIndex).getQtd());
 		} else if(columnIndex == 4){
-			return (produtos.get(rowIndex).getPrice());
+			return String.format("R$ %.2f", produtos.get(rowIndex).getPrice());
 		} else {
-			return (produtos.get(rowIndex).getTotalPrice());
+			return String.format("R$ %.2f", produtos.get(rowIndex).getTotalPrice());
 		}
 	}
 
