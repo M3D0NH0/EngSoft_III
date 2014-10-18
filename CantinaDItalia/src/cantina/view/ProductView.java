@@ -49,7 +49,7 @@ public class ProductView extends JFrame {
 		splitPane = new JSplitPane();
 		splitPane.setBounds(0, 11, 1010, 590);
 		setResizable(false);
-		setTitle("Cantina D'Italia");
+		setTitle("Cantina D'itália");
 		setSize(1020, 665);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		menuBar = new JMenuBar();
