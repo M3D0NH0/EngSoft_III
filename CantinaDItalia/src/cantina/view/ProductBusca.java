@@ -3,6 +3,9 @@ package cantina.view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -99,7 +102,8 @@ public class ProductBusca extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource().equals(btnUltimoMes)) {
-					mes = "10/2014";
+					DateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
+					mes = dateFormat.format(new Date());
 					ProductTable produtosRela = new ProductTable();
 					produtosRela.productTableMes(mes);
 					ProductView.splitPane.setRightComponent(produtosRela);
