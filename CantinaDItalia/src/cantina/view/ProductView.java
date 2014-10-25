@@ -7,6 +7,9 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -152,7 +155,22 @@ public class ProductView extends JFrame {
 				setVisible(true);
 				
 			} else if(e.getSource() == mntmUltimoMes){
+				DateFormat dateFormat = new SimpleDateFormat("MM/yyyy");
+				String mes = dateFormat.format(new Date());
+				ProductTable produtosRela = new ProductTable();
+				produtosRela.productTableMes(mes);
+				produtosRela.setBackground(Color.GRAY);
+				//textFieldBusca.setText(null);
+		
 
+				getContentPane().removeAll();
+				setJMenuBar(menuBar);
+				getContentPane().add(produtosRela);
+				setLocationRelativeTo(null);
+				produtosBusca.setBackground(Color.GRAY);
+				setVisible(false);
+				setVisible(true);	
+				
 			}
 		}
 	}
