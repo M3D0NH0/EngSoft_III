@@ -66,7 +66,7 @@ public class ProductView extends JFrame {
 		mntmSair = new JMenuItem("Sair");
 		mntmBuscaValidade = new JMenuItem("Busca por Validade");
 		mntmCadastro = new JMenuItem("Cadastrar Produtos");
-		mntmUltimoMes = new JMenuItem("Buscar Mes Atual");
+		mntmUltimoMes = new JMenuItem("Buscar Mês Atual");
 		produtosBusca = new ProductBusca();
 		produtosInserir = new ProductInsert();
 		mnMenu.add(mntmHome);
