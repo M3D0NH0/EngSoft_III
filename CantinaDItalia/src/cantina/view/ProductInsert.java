@@ -47,8 +47,6 @@ public class ProductInsert extends JPanel{
 		bt_adicionar = new JButton("Adicionar");
 		bt_limpar = new JButton("Limpar");
 		
-		
-		
 	}
 	
 	public void addComponetes(){

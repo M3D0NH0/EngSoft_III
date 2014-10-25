@@ -34,8 +34,11 @@ public class ProductView extends JFrame {
 	private JMenu mnMenu;
 	private JMenuItem mntmHome;
 	private JMenuItem mntmBuscaValidade;
-	private JMenuItem mntmSair;
 	private JMenuItem mntmCadastro;
+	private JMenuItem mntmUltimoMes;
+	private JMenuItem mntmSair;
+	
+	
 
 	public void init() {
 		iniciaComponentes();
@@ -60,10 +63,12 @@ public class ProductView extends JFrame {
 		mntmSair = new JMenuItem("Sair");
 		mntmBuscaValidade = new JMenuItem("Busca por Validade");
 		mntmCadastro = new JMenuItem("Cadastrar Produtos");
+		mntmUltimoMes = new JMenuItem("Buscar Mes Atual");
 		produtosBusca = new ProductBusca();
 		produtosInserir = new ProductInsert();
 		mnMenu.add(mntmHome);
 		mnMenu.add(mntmBuscaValidade);
+		mnMenu.add(mntmUltimoMes);
 		mnMenu.add(mntmCadastro);
 		mnMenu.add(mntmSair);
 		getContentPane().add(new JLabel(new ImageIcon("img/cantinaditalia.jpg")));
@@ -77,6 +82,7 @@ public class ProductView extends JFrame {
 		mntmHome.addActionListener(new Tratador());
 		mntmBuscaValidade.addActionListener(new Tratador());
 		mntmCadastro.addActionListener(new Tratador());
+		mntmUltimoMes.addActionListener(new Tratador());
 		mntmSair.addActionListener(new Tratador());
 	}
 	
@@ -92,7 +98,11 @@ public class ProductView extends JFrame {
 			mntmCadastro.setMnemonic(KeyEvent.VK_C);
 			mntmCadastro.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
 					ActionEvent.CTRL_MASK));
-
+			
+			mntmUltimoMes.setMnemonic(KeyEvent.VK_M);
+			mntmUltimoMes.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M,
+					ActionEvent.CTRL_MASK));
+			
 			mntmSair.setMnemonic(KeyEvent.VK_W);
 			mntmSair.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4,
 					ActionEvent.ALT_MASK));
@@ -141,6 +151,8 @@ public class ProductView extends JFrame {
 				setVisible(false);
 				setVisible(true);
 				
+			} else if(e.getSource() == mntmUltimoMes){
+
 			}
 		}
 	}

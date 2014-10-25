@@ -132,4 +132,17 @@ public class Product {
 		return this.totalprice;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Product) {
+			return id == ((Product)obj).id;
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		return new Integer(id).hashCode();
+	}
+	
 }

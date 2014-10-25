@@ -26,8 +26,7 @@ public class ProductBusca extends JPanel {
 	private JLabel lblGuardaBuscaData;
 	private JLabel lblGuardaBuscaNome;
 	private JButton btnLimpar;
-	private JButton btnBuscarNome;
-	private JButton btnBuscarData;
+	private JButton btnBuscar;
 	private JButton btnUltimoMes;
 	private String data, nome, mes;
 
@@ -42,9 +41,8 @@ public class ProductBusca extends JPanel {
 		lblTitulo = new JLabel("BUSCA DE PRODUTOS DO ESTOQUE");
 		lblGuardaBuscaData = new JLabel();
 		lblGuardaBuscaNome = new JLabel();
-		btnBuscarNome = new JButton("Buscar por Nome");
 		btnLimpar = new JButton("Limpar");
-		btnBuscarData = new JButton("Buscar por Data");
+		btnBuscar = new JButton("Buscar");
 		btnUltimoMes = new JButton("Mês atual");
 	}
 
@@ -79,15 +77,11 @@ public class ProductBusca extends JPanel {
 		add(btnLimpar);
 		btnLimpar.setBackground(Color.WHITE);
 
-		btnBuscarData.setBackground(Color.WHITE);
-		btnBuscarData.setBounds(28, 194, 208, 23);
-		add(btnBuscarData);
-		btnBuscarData.setBackground(Color.WHITE);
+		btnBuscar.setBackground(Color.WHITE);
+		btnBuscar.setBounds(28, 194, 208, 23);
+		add(btnBuscar);
+		btnBuscar.setBackground(Color.WHITE);
 
-		btnBuscarNome.setBackground(Color.WHITE);
-		btnBuscarNome.setBounds(28, 174, 208, 23);
-		add(btnBuscarNome);
-		btnBuscarNome.setBackground(Color.WHITE);
 
 		btnLimpar.addActionListener(new ActionListener() {
 
@@ -117,42 +111,17 @@ public class ProductBusca extends JPanel {
 			}
 		});
 
-		btnBuscarNome.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if (e.getSource().equals(btnBuscarNome)) {
-					if ((textFieldBusca.getText() == null
-							|| textFieldBusca.getText().equals(""))) {
-						JOptionPane.showMessageDialog(null, "Nome inválido");
-					} else {
-						nome = textFieldBusca.getText();
-						lblGuardaBuscaNome.setText("Último nome pesquisado: "+nome);
-						ProductTable produtosRela = new ProductTable();
-						produtosRela.productTableNome(nome);
-						ProductView.splitPane.setRightComponent(produtosRela);
-						produtosRela.setBackground(Color.GRAY);
-						ProductView.splitPane.setDividerLocation(250);
-						ProductView.splitPane.setEnabled(false);
-						textFieldBusca.setText(null);
-						JOptionPane.showMessageDialog(null, "Busca realizada");
-					}
-				}
-
-			}
-		});
-
-		btnBuscarData.addActionListener(new ActionListener() {
+		btnBuscar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 
-				if (arg0.getSource().equals(btnBuscarData)) {
+				if (arg0.getSource().equals(btnBuscar)) {
 					if (textFieldBusca.getText() == null
 							|| textFieldBusca.getText().equals("")) {
-						JOptionPane.showMessageDialog(null, "Data inválida");
+						JOptionPane.showMessageDialog(null, "Busca Invalida");
 					} else {
 						data = textFieldBusca.getText();
-						lblGuardaBuscaData.setText("Última data pesquisada: "+data);
+						lblGuardaBuscaData.setText("Última busca realizada: "+data);
 						ProductTable produtosRela = new ProductTable();
 						produtosRela.productTableData(data);
 						ProductView.splitPane.setRightComponent(produtosRela);
